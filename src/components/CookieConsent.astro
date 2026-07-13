@@ -1,0 +1,30 @@
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-labelledby="cookie-title" hidden>
+  <div class="container cookie-banner__inner">
+    <p id="cookie-title">
+      Usamos cookies técnicas y, si las activas en el futuro, analíticas. Consulta la
+      <a href="/politica-de-cookies">política de cookies</a>.
+    </p>
+    <div class="cookie-banner__actions">
+      <button type="button" class="cookie-banner__btn cookie-banner__btn--primary" data-cookie-accept>Aceptar</button>
+      <button type="button" class="cookie-banner__btn" data-cookie-reject>Rechazar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const KEY = 'azurea-cookie-consent';
+  const banner = document.getElementById('cookie-banner');
+
+  if (banner && !localStorage.getItem(KEY)) banner.hidden = false;
+
+  document.querySelector('[data-cookie-accept]')?.addEventListener('click', () => {
+    localStorage.setItem(KEY, 'accepted');
+    if (banner) banner.hidden = true;
+  });
+
+  document.querySelector('[data-cookie-reject]')?.addEventListener('click', () => {
+    localStorage.setItem(KEY, 'rejected');
+    if (banner) banner.hidden = true;
+  });
+</script>
+

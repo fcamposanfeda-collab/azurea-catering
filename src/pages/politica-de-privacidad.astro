@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getPageMeta } from '../data/pages-meta';
+import { contact } from '../data/site';
+
+const meta = getPageMeta('/politica-de-privacidad');
+---
+
+<BaseLayout title={meta.title} description={meta.description}>
+  <section class="page-hero">
+    <div class="container section-header">
+      <span class="eyebrow">Privacidad</span>
+      <h1>Política de privacidad</h1>
+      <p class="lead">Información sobre cómo se tratan los datos enviados a través de esta web.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container rich-text">
+      <h2>Responsable</h2>
+      <p>
+        El responsable del tratamiento es Azurea Catering. Los datos fiscales completos deberán completarse
+        antes de la publicación definitiva. Puedes contactar en
+        <a href={`mailto:${contact.email}`}>{contact.email}</a>.
+      </p>
+
+      <h2>Finalidad</h2>
+      <p>
+        Los datos facilitados por email, teléfono, WhatsApp o formulario se utilizarán para responder
+        solicitudes de información y preparar presupuestos de catering.
+      </p>
+
+      <h2>Legitimación y conservación</h2>
+      <p>
+        La base legal es el consentimiento de la persona interesada al contactar con Azurea Catering. Los
+        datos se conservarán durante el tiempo necesario para atender la solicitud y cumplir obligaciones
+        legales.
+      </p>
+
+      <h2>Derechos</h2>
+      <p>
+        Puedes solicitar el acceso, rectificación, supresión, oposición, limitación o portabilidad de tus
+        datos escribiendo a <a href={`mailto:${contact.email}`}>{contact.email}</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+

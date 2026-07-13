@@ -1,0 +1,66 @@
+---
+import '../styles/global.css';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import CookieConsent from '../components/CookieConsent.astro';
+import SeoSchema from '../components/SeoSchema.astro';
+import { local } from '../data/local';
+import { site } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, site.url);
+const ogImageURL = new URL(site.ogImage, site.url);
+const fontHref =
+  'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap';
+---
+
+<!doctype html>
+<html lang={site.lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#102f35" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href={fontHref} rel="stylesheet" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:alt" content={`${site.name} — catering en ${local.city}`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+    <meta name="geo.region" content={local.regionCode} />
+    <meta name="geo.placename" content={local.city} />
+    <meta name="geo.position" content={`${local.geo.latitude};${local.geo.longitude}`} />
+    <meta name="ICBM" content={`${local.geo.latitude}, ${local.geo.longitude}`} />
+    <title>{title}</title>
+    <SeoSchema pathname={Astro.url.pathname} title={title} description={description} />
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+    <CookieConsent />
+    <script src="../scripts/reveal.ts"></script>
+  </body>
+</html>
+

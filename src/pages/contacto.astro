@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/forms/ContactForm.astro';
+import Button from '../components/ui/Button.astro';
+import BudgetCallout from '../components/ui/BudgetCallout.astro';
+import { getPageMeta } from '../data/pages-meta';
+import { contact } from '../data/site';
+
+const meta = getPageMeta('/contacto');
+---
+
+<BaseLayout title={meta.title} description={meta.description}>
+  <section class="page-hero">
+    <div class="container section-header" data-reveal>
+      <span class="eyebrow">Contacto</span>
+      <h1>Cuéntanos qué estás preparando</h1>
+      <p class="lead">
+        Indícanos fecha, lugar, invitados, tipo de evento y el presupuesto aproximado. Atendemos
+        celebraciones en Ciudad Real, provincia y Castilla-La Mancha. Con eso prepararemos opciones
+        adaptadas a lo que quieres invertir.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-layout">
+      <div class="contact-panel" data-reveal>
+        <span class="eyebrow">Solicitud</span>
+        <h2>Contáctanos para lo que necesites</h2>
+        <p class="lead">
+          Si prefieres ir directo, puedes llamarnos, escribir por WhatsApp o enviar un email. Te responderemos
+          lo antes posible para hacer tu evento realidad.
+        </p>
+        <BudgetCallout />
+        <div class="cta-actions">
+          <Button href={contact.whatsapp} variant="secondary" size="lg">WhatsApp</Button>
+          <Button href={`tel:${contact.phone}`} variant="outline" size="lg">{contact.phoneDisplay}</Button>
+        </div>
+        <ul class="feature-list">
+          <li><a href={`mailto:${contact.email}`}>{contact.email}</a></li>
+          <li>Propuestas según el presupuesto que quieras destinar: solo catering o experiencia completa.</li>
+          <li>Bodas, comuniones, bautizos, empresas y eventos privados.</li>
+        </ul>
+      </div>
+      <div class="contact-panel" data-reveal>
+        <ContactForm />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/ui/Button.astro';
+import BudgetSection from '../components/sections/BudgetSection.astro';
+import BudgetCallout from '../components/ui/BudgetCallout.astro';
+import { getPageMeta } from '../data/pages-meta';
+import { formats, serviceCards, values } from '../data/content';
+import { routes } from '../data/routes';
+
+const meta = getPageMeta('/servicios');
+---
+
+<BaseLayout title={meta.title} description={meta.description}>
+  <section class="page-hero">
+    <div class="container section-header" data-reveal>
+      <span class="eyebrow">Servicios</span>
+      <h1>Catering a medida para celebraciones totalmente personalizadas</h1>
+      <p class="lead">
+        En Ciudad Real y Castilla-La Mancha, adaptamos bodas, comuniones, empresas y eventos privados a
+        tu presupuesto: formato, menú y servicio para que la propuesta encaje con tu celebración.
+      </p>
+      <BudgetCallout />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid grid--4">
+      {
+        serviceCards.map((service) => (
+          <a class="card" href={service.href} data-reveal>
+            <span class="card__meta">Servicio</span>
+            <h3>{service.title}</h3>
+            <p>{service.text}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <BudgetSection />
+
+  <section class="section section--cream">
+    <div class="container split">
+      <div data-reveal>
+        <span class="eyebrow">Formatos</span>
+        <h2>La estructura perfecta para tu evento</h2>
+        <p class="lead">
+          Puedes elegir una experiencia relajada de cóctel, un menú servido, estaciones temáticas o una
+          combinación de varios momentos gastronómicos.
+        </p>
+        <ul class="feature-list">
+          {formats.map((format) => <li>{format}</li>)}
+        </ul>
+        <div class="cta-actions">
+          <Button href={routes.contact} size="lg">Solicitar propuesta</Button>
+        </div>
+      </div>
+      <div
+        class="split__media"
+        style="--image: url('/images/optimized/azurea-aperitivos.webp')"
+        aria-hidden="true"
+        data-reveal
+      >
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-header section-header--center" data-reveal>
+        <span class="eyebrow">Diferencia Azurea</span>
+        <h2>Menos improvisación, más experiencia</h2>
+      </div>
+      <div class="grid grid--3">
+        {values.map((value) => <div class="card card--dark" data-reveal><h3>{value.title}</h3><p>{value.text}</p></div>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

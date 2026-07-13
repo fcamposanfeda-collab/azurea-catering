@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getPageMeta } from '../data/pages-meta';
+
+const meta = getPageMeta('/politica-de-cookies');
+---
+
+<BaseLayout title={meta.title} description={meta.description}>
+  <section class="page-hero">
+    <div class="container section-header">
+      <span class="eyebrow">Cookies</span>
+      <h1>Política de cookies</h1>
+      <p class="lead">Información sobre el uso de cookies en este sitio web.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container rich-text">
+      <h2>Qué son las cookies</h2>
+      <p>
+        Las cookies son pequeños archivos que un sitio web puede almacenar en el navegador para recordar
+        información técnica o preferencias de navegación.
+      </p>
+
+      <h2>Cookies utilizadas</h2>
+      <p>
+        Esta web utiliza una cookie/local storage técnico para recordar la preferencia del banner de cookies.
+        Si se añade analítica o herramientas de terceros en el futuro, esta política deberá actualizarse.
+      </p>
+
+      <h2>Cómo configurar cookies</h2>
+      <p>
+        Puedes permitir, bloquear o eliminar cookies desde la configuración de tu navegador. Al eliminar la
+        preferencia, el banner puede volver a mostrarse.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+

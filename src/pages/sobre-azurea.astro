@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/ui/Button.astro';
+import PhotoGallery from '../components/ui/PhotoGallery.astro';
+import BudgetCallout from '../components/ui/BudgetCallout.astro';
+import { getPageMeta } from '../data/pages-meta';
+import { brand } from '../data/brand';
+import { values } from '../data/content';
+import { routes } from '../data/routes';
+
+const meta = getPageMeta('/sobre-azurea');
+---
+
+<BaseLayout title={meta.title} description={meta.description}>
+  <section class="page-hero">
+    <div class="container section-header" data-reveal>
+      <span class="eyebrow">Sobre Azurea</span>
+      <h1>Una forma elegante y cercana de entender el catering</h1>
+      <p class="lead">
+        {brand.claim} Desde Ciudad Real, trabajamos en Castilla-La Mancha y más allá cuando el
+        proyecto lo pide. La marca nace con una idea clara: que un evento se recuerde por la
+        experiencia completa, no solo por el menú.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div data-reveal>
+        <span class="eyebrow">Nuestra mirada</span>
+        <h2>Cocina, servicio y puesta en escena trabajando juntos</h2>
+        <p class="lead">
+          Azurea diseña catering personalizado para eventos inolvidables, adaptando cada propuesta al
+          presupuesto y a los detalles que hacen única una celebración.
+        </p>
+        <BudgetCallout />
+        <div class="cta-actions">
+          <Button href={routes.contact} size="lg">Solicitar presupuesto</Button>
+        </div>
+      </div>
+      <div
+        class="split__media"
+        style="--image: url('/images/optimized/azurea-servicio.webp')"
+        aria-hidden="true"
+        data-reveal
+      >
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="container grid grid--3">
+      {values.map((value) => <div class="card card--dark" data-reveal><h3>{value.title}</h3><p>{value.text}</p></div>)}
+    </div>
+  </section>
+
+  <section class="section section--header">
+    <div class="container">
+      <div class="section-header section-header--center" data-reveal>
+        <span class="eyebrow">Galería</span>
+        <h2>Momentos reales de celebraciones Azurea</h2>
+        <p class="lead">
+          Un vistazo a mesas, corners, servicio y ambientes que hemos creado. Cada imagen cuenta una forma distinta
+          de vivir un evento con elegancia y detalle.
+        </p>
+      </div>
+      <PhotoGallery />
+    </div>
+  </section>
+</BaseLayout>

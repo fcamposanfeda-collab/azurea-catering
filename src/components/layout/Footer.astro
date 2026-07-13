@@ -1,0 +1,40 @@
+---
+import Logo from '../brand/Logo.astro';
+import { brand } from '../../data/brand';
+import { local } from '../../data/local';
+import { contact, site } from '../../data/site';
+import { footerNav, legalNav } from '../../data/navigation';
+---
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <Logo />
+      <p class="footer__descriptor">{brand.legalName}</p>
+      <p class="footer__area">Catering en {local.serviceAreaShort}.</p>
+      <p>{brand.claim}</p>
+    </div>
+
+    <div class="footer__col">
+      <h2>Contacto</h2>
+      <p><a href={`mailto:${contact.email}`}>{contact.email}</a></p>
+      <p><a href={`tel:${contact.phone}`}>{contact.phoneDisplay}</a></p>
+      <p><a href={contact.whatsapp}>WhatsApp directo</a></p>
+    </div>
+
+    <div class="footer__col">
+      <h2>Enlaces</h2>
+      <ul>
+        {footerNav.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__legal container">
+    <p>{site.copyright}</p>
+    <ul>
+      {legalNav.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
+    </ul>
+  </div>
+</footer>
+

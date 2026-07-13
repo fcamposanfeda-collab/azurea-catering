@@ -1,0 +1,66 @@
+---
+import { contact } from '../../data/site';
+
+const isConfigured = Boolean(import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY);
+---
+
+<h3 class="contact-form__title">Te ayudamos con tu evento especial</h3>
+
+<form class="contact-form" data-contact-form novalidate>
+  <input type="checkbox" name="botcheck" class="contact-form__honeypot" tabindex="-1" autocomplete="off" />
+
+  <div class="form-grid">
+    <label>
+      Nombre
+      <input type="text" name="nombre" autocomplete="name" required />
+    </label>
+    <label>
+      Teléfono
+      <input type="tel" name="telefono" autocomplete="tel" />
+    </label>
+  </div>
+  <label>
+    Email
+    <input type="email" name="email" autocomplete="email" required />
+  </label>
+  <label>
+    Tipo de evento
+    <select name="evento">
+      <option value="Boda">Boda</option>
+      <option value="Comunión">Comunión</option>
+      <option value="Empresa">Empresa</option>
+      <option value="Evento privado">Evento privado</option>
+      <option value="Otro">Otro</option>
+    </select>
+  </label>
+  <label>
+    Cuéntanos fecha, lugar, invitados, presupuesto aproximado y estilo
+    <textarea name="mensaje" rows="5" required></textarea>
+  </label>
+
+  <p class="contact-form__status" data-form-status hidden></p>
+
+  <button type="submit" class="btn btn--primary btn--lg">
+    {isConfigured ? 'Enviar solicitud' : 'Preparar email de solicitud'}
+  </button>
+  <p class="contact-form__note">
+    {
+      isConfigured ? (
+        <>
+          Recibirás respuesta en breve. También puedes escribir a{' '}
+          <a href={`mailto:${contact.email}`}>{contact.email}</a> o llamar al{' '}
+          <a href={`tel:${contact.phone}`}>{contact.phoneDisplay}</a>.
+        </>
+      ) : (
+        <>
+          También puedes escribir a <a href={`mailto:${contact.email}`}>{contact.email}</a> o llamar al{' '}
+          <a href={`tel:${contact.phone}`}>{contact.phoneDisplay}</a>.
+        </>
+      )
+    }
+  </p>
+</form>
+
+<script>
+  import '../../scripts/contact-form.ts';
+</script>

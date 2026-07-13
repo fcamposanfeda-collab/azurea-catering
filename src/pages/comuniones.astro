@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/ui/Button.astro';
+import BudgetCallout from '../components/ui/BudgetCallout.astro';
+import { getPageMeta } from '../data/pages-meta';
+import { routes } from '../data/routes';
+
+const meta = getPageMeta('/comuniones');
+---
+
+<BaseLayout title={meta.title} description={meta.description}>
+  <section class="page-hero">
+    <div class="container section-header" data-reveal>
+      <span class="eyebrow">Comuniones</span>
+      <h1>Catering para comuniones con menú personalizado para toda la familia</h1>
+      <p class="lead">
+        Diseñamos comuniones personalizadas, con propuestas para adultos y niños, un catering especial,
+        y opciones adaptadas a lo que necesite tu celebración.
+      </p>
+      <BudgetCallout />
+      <div class="cta-actions">
+        <Button href={routes.contact} size="lg">Solicitar propuesta</Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div data-reveal>
+        <span class="eyebrow">Para todos</span>
+        <h2>Menús que funcionan para <br />pequeños y mayores</h2>
+        <p class="lead">
+          La comunión tiene que ser fácil de vivir: opciones sabrosas, tiempos ágiles y detalles que hacen
+          que la mesa se vea especial.
+        </p>
+        <ul class="feature-list">
+          <li>Propuestas familiares con opciones infantiles.</li>
+          <li>Aperitivos, principal, postres y mesa dulce.</li>
+          <li>Montaje elegante adaptado a casas, jardines o salones.</li>
+          <li>Servicio atento durante toda la celebración.</li>
+        </ul>
+      </div>
+      <div
+        class="split__media"
+        style="--image: url('/images/optimized/azurea-dulce.webp')"
+        aria-hidden="true"
+        data-reveal
+      >
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--header">
+    <div class="container">
+      <div class="section-header section-header--center" data-reveal>
+        <span class="eyebrow">Más allá del catering</span>
+        <h2>Os acompañamos en la comunión desde mucho antes del gran día</h2>
+        <p class="lead">
+          No solo nos ocupamos del menú. Podemos ayudaros con la organización del evento, la decoración,
+          la papelería y cada detalle para que la celebración sea cómoda, bonita y tal como la habéis
+          imaginado.
+        </p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card" data-reveal>
+          <span class="card__meta">Antes del día</span>
+          <h3>Invitaciones y papelería</h3>
+          <p>Invitaciones, recordatorios, seating plan y detalles impresos con una estética acorde a la comunión.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="card__meta">Ambiente</span>
+          <h3>Decoración y flores</h3>
+          <p>Mesas, rincones, flores y puesta en escena para que el espacio se sienta especial desde la llegada.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="card__meta">Experiencias</span>
+          <h3>Corners y momentos especiales</h3>
+          <p>Candy bar, mesa dulce, estaciones de aperitivos o rincones pensados para grandes y pequeños.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="card__meta">Recuerdos</span>
+          <h3>Fotos instantáneas</h3>
+          <p>Contamos con proveedores de fotos instantáneas para que la familia y los invitados se lleven un recuerdo del día.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="card__meta">Música</span>
+          <h3>Grupos y DJs</h3>
+          <p>Os ponemos en contacto con grupos musicales o DJs para que el ambiente acompañe la celebración familiar.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="card__meta">Todo junto</span>
+          <h3>Un solo interlocutor</h3>
+          <p>Coordinamos catering, decoración, corners y proveedores para que la familia pueda disfrutar sin preocupaciones.</p>
+        </div>
+      </div>
+      <div class="cta-actions cta-actions--center" data-reveal>
+        <Button href={routes.contact} size="lg">Cuéntanos vuestra comunión</Button>
+        <Button href={routes.createEvent} variant="outline" size="lg">Crea otro tipo de evento</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

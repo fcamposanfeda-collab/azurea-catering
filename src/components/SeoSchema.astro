@@ -1,0 +1,112 @@
+---
+import { brand } from '../data/brand';
+import { breadcrumbLabels, type PagePath } from '../data/pages-meta';
+import { serviceCards } from '../data/content';
+import { local } from '../data/local';
+import { contact, site } from '../data/site';
+
+interface Props {
+  pathname: string;
+  title: string;
+  description: string;
+}
+
+const { pathname, title, description } = Astro.props;
+const pagePath = (pathname in breadcrumbLabels ? pathname : '/') as PagePath;
+const pageUrl = new URL(pagePath, site.url).href;
+const businessId = `${site.url}/#business`;
+const websiteId = `${site.url}/#website`;
+const webpageId = `${pageUrl}#webpage`;
+const breadcrumbId = `${pageUrl}#breadcrumb`;
+const ogImage = new URL(site.ogImage, site.url).href;
+
+const breadcrumbItems =
+  pagePath === '/'
+    ? [{ name: breadcrumbLabels['/'], item: site.url }]
+    : [
+        { name: breadcrumbLabels['/'], item: site.url },
+        { name: breadcrumbLabels[pagePath], item: pageUrl },
+      ];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': websiteId,
+      url: site.url,
+      name: site.name,
+      description: site.description,
+      inLanguage: 'es-ES',
+      publisher: { '@id': businessId },
+    },
+    {
+      '@type': ['LocalBusiness', 'FoodEstablishment'],
+      '@id': businessId,
+      name: brand.legalName,
+      alternateName: brand.name,
+      url: site.url,
+      image: ogImage,
+      email: contact.email,
+      telephone: contact.phoneDisplay,
+      description: site.description,
+      slogan: brand.tagline,
+      priceRange: '€€',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: local.city,
+        addressRegion: local.region,
+        addressCountry: local.countryCode,
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: local.geo.latitude,
+        longitude: local.geo.longitude,
+      },
+      areaServed: local.areaServed.map((name) => ({
+        '@type': 'AdministrativeArea',
+        name,
+      })),
+      knowsAbout: [
+        'Catering para bodas',
+        'Catering para comuniones',
+        'Catering corporativo',
+        'Eventos privados',
+        'Menús personalizados',
+      ],
+      makesOffer: serviceCards.map((service) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: service.title,
+          description: service.text,
+          areaServed: local.city,
+          provider: { '@id': businessId },
+        },
+      })),
+    },
+    {
+      '@type': 'WebPage',
+      '@id': webpageId,
+      url: pageUrl,
+      name: title,
+      description,
+      isPartOf: { '@id': websiteId },
+      about: { '@id': businessId },
+      inLanguage: 'es-ES',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': breadcrumbId,
+      itemListElement: breadcrumbItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        item: item.item,
+      })),
+    },
+  ],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -1,0 +1,62 @@
+---
+import { galleryImages } from '../../data/gallery';
+---
+
+<div class="photo-gallery" data-gallery>
+  {
+    galleryImages.map((image) => (
+      <button
+        type="button"
+        class:list={['photo-gallery__item', { 'photo-gallery__item--wide': image.wide }]}
+        data-gallery-item
+        data-src={image.src}
+        data-alt={image.alt}
+        data-position={'position' in image ? image.position : ''}
+        aria-label={`Ver ${image.alt}`}
+      >
+        <img
+          src={image.src}
+          alt={image.alt}
+          loading="lazy"
+          decoding="async"
+          width="900"
+          height="900"
+          style={'position' in image && image.position ? `object-position: ${image.position}` : undefined}
+        />
+      </button>
+    ))
+  }
+</div>
+
+<dialog class="photo-gallery__lightbox" data-gallery-lightbox aria-label="Vista ampliada">
+  <button type="button" class="photo-gallery__close" data-gallery-close aria-label="Cerrar">×</button>
+  <img src="" alt="" data-gallery-preview />
+</dialog>
+
+<script>
+  const gallery = document.querySelector('[data-gallery]');
+  const lightbox = document.querySelector<HTMLDialogElement>('[data-gallery-lightbox]');
+  const preview = document.querySelector<HTMLImageElement>('[data-gallery-preview]');
+  const closeButton = document.querySelector<HTMLButtonElement>('[data-gallery-close]');
+
+  gallery?.querySelectorAll('[data-gallery-item]').forEach((item) => {
+    item.addEventListener('click', () => {
+      if (!(item instanceof HTMLButtonElement) || !lightbox || !preview) return;
+      preview.src = item.dataset.src ?? '';
+      preview.alt = item.dataset.alt ?? '';
+      preview.style.objectPosition = item.dataset.position || 'center';
+      lightbox.showModal();
+    });
+  });
+
+  closeButton?.addEventListener('click', () => lightbox?.close());
+  lightbox?.addEventListener('click', (event) => {
+    if (event.target === lightbox) lightbox.close();
+  });
+  lightbox?.addEventListener('close', () => {
+    if (preview) {
+      preview.src = '';
+      preview.alt = '';
+    }
+  });
+</script>

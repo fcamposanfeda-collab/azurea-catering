@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/ui/Button.astro';
+import BudgetCallout from '../components/ui/BudgetCallout.astro';
+import { getPageMeta } from '../data/pages-meta';
+import { routes } from '../data/routes';
+
+const meta = getPageMeta('/crea-tu-evento');
+
+const ideas = [
+  {
+    title: 'Presupuesto flexible',
+    text: 'Tú decides cuánto invertir y te presentamos opciones reales: solo catering, algo sencillo o una celebración más completa.',
+  },
+  {
+    title: 'Temática a tu gusto',
+    text: 'Partimos de la idea que tienes en mente y la llevamos a la mesa, la decoración, los colores y cada momento del evento.',
+  },
+  {
+    title: 'Decoración y comida alineadas',
+    text: 'Diseñamos una propuesta coherente para que el menú, la puesta en escena y los detalles hablen el mismo lenguaje.',
+  },
+  {
+    title: 'Experiencias para invitados',
+    text: 'Creamos rincones y momentos especiales que hacen que la celebración se recuerde más allá del banquete.',
+  },
+];
+
+const corners = [
+  'Corner de glitter',
+  'Fotos instantáneas',
+  'Candy bar',
+  'Corner de vino',
+  'Mesa de quesos',
+  'Cortador o corner de jamón',
+  'Estación de cócteles',
+  'Mesa dulce personalizada',
+  'Rincones salados o productos especiales',
+];
+---
+
+<BaseLayout title={meta.title} description={meta.description}>
+  <section class="page-hero">
+    <div class="container section-header" data-reveal>
+      <span class="eyebrow">Crea tu evento</span>
+      <h1>Tu diseñas ese día. Nosotros lo hacemos posible.</h1>
+      <p class="lead">
+        Personalizamos cada evento para que todo tenga tu gusto. Tú marcas el presupuesto, nosotros te
+        damos opciones en decoración, comida, corners y cada detalle de la celebración.
+      </p>
+      <BudgetCallout />
+      <div class="cta-actions">
+        <Button href={routes.contact} size="lg">Diseñar mi evento</Button>
+        <Button href={routes.services} variant="outline" size="lg">Ver servicios</Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div data-reveal>
+        <span class="eyebrow">A medida</span>
+        <h2>Una celebración construida alrededor de vuestra idea</h2>
+        <p class="lead">
+          Si tienes una temática, un estilo o una ilusión concreta, la usamos como punto de partida. Podemos
+          basar en ella la decoración, el tipo de comida, los rincones especiales y la forma en la que se vive
+          cada parte del evento.
+        </p>
+        <ul class="feature-list">
+          <li>Escuchamos cómo imaginas el día y qué ambiente quieres crear.</li>
+          <li>Proponemos comida, estética y detalles que encajen con esa idea.</li>
+          <li>Coordinamos el montaje para que todo se sienta unido y natural.</li>
+        </ul>
+      </div>
+      <div
+        class="split__media"
+        style="--image: url('/images/optimized/azurea-mesa-exterior.webp'); --image-position: center 74%;"
+        aria-hidden="true"
+        data-reveal
+      >
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-header section-header--center" data-reveal>
+        <span class="eyebrow">Diseño completo</span>
+        <h2>Todo puede girar alrededor de una misma idea</h2>
+      </div>
+      <div class="grid grid--3">
+        {ideas.map((idea) => <div class="card card--dark" data-reveal><h3>{idea.title}</h3><p>{idea.text}</p></div>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="container split">
+      <div
+        class="split__media"
+        style="--image: url('/images/optimized/azurea-detalle.webp'); --image-position: center 58%;"
+        aria-hidden="true"
+        data-reveal
+      >
+      </div>
+      <div data-reveal>
+        <span class="eyebrow">Corners</span>
+        <h2>Rincones especiales para que el evento tenga vida propia</h2>
+        <p class="lead">
+          Podemos ayudarte a crear corners de muchas cosas: experiencias bonitas, zonas gastronómicas o
+          pequeños detalles que sorprenden a los invitados y hacen que participen.
+        </p>
+        <ul class="feature-list">
+          {corners.map((corner) => <li>{corner}</li>)}
+        </ul>
+        <div class="cta-actions">
+          <Button href={routes.contact} size="lg">Cuéntanos tu idea</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/ui/Button.astro';
+import BudgetCallout from '../components/ui/BudgetCallout.astro';
+import { getPageMeta } from '../data/pages-meta';
+import { routes } from '../data/routes';
+
+const meta = getPageMeta('/eventos');
+---
+
+<BaseLayout title={meta.title} description={meta.description}>
+  <section class="page-hero">
+    <div class="container section-header" data-reveal>
+      <span class="eyebrow">Eventos</span>
+      <h1>Catering para empresas, cumpleaños y eventos privados</h1>
+      <p class="lead">
+        Desde un cóctel corporativo hasta una celebración íntima, creamos soluciones flexibles según el
+        presupuesto y el tipo de evento que quieras celebrar.
+      </p>
+      <BudgetCallout />
+      <div class="cta-actions">
+        <Button href={routes.contact} size="lg">Hablar de mi evento</Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid grid--3">
+      <div class="card" data-reveal><span class="card__meta">Empresas</span><h3>Eventos corporativos</h3><p>Coffee breaks, presentaciones, reuniones, inauguraciones y cócteles con una imagen cuidada.</p></div>
+      <div class="card" data-reveal><span class="card__meta">Privados</span><h3>Cumpleaños y aniversarios</h3><p>Propuestas personalizadas para celebrar en casa, finca, jardín o espacio privado.</p></div>
+      <div class="card" data-reveal><span class="card__meta">Especiales</span><h3>Celebraciones a medida</h3><p>Un formato diseñado desde cero cuando el evento pide algo diferente.</p></div>
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="container split">
+      <div
+        class="split__media"
+        style="--image: url('/images/optimized/azurea-brindis.webp')"
+        aria-hidden="true"
+        data-reveal
+      >
+      </div>
+      <div data-reveal>
+        <span class="eyebrow">Profesionalidad</span>
+        <h2>Un servicio que se adapta al objetivo del encuentro</h2>
+        <p class="lead">
+          Cuidamos la estética, los tiempos y la comodidad para que el catering acompañe al evento sin
+          robar protagonismo.
+        </p>
+        <ul class="feature-list">
+          <li>Propuestas dulces, saladas o mixtas.</li>
+          <li>Servicio de cóctel, buffet o estaciones.</li>
+          <li>Montaje y presentación ajustados al espacio.</li>
+          <li>Opciones para grupos reducidos o eventos con más invitados.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

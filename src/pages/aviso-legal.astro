@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getPageMeta } from '../data/pages-meta';
+import { contact, site } from '../data/site';
+
+const meta = getPageMeta('/aviso-legal');
+---
+
+<BaseLayout title={meta.title} description={meta.description}>
+  <section class="page-hero">
+    <div class="container section-header">
+      <span class="eyebrow">Legal</span>
+      <h1>Aviso legal</h1>
+      <p class="lead">Información general del sitio web {site.name}.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container rich-text">
+      <h2>Titularidad</h2>
+      <p>
+        Este sitio web pertenece a Azurea Catering. Los datos fiscales completos del titular deberán
+        completarse antes de la publicación definitiva.
+      </p>
+      <p>Contacto: <a href={`mailto:${contact.email}`}>{contact.email}</a> · <a href={`tel:${contact.phone}`}>{contact.phoneDisplay}</a>.</p>
+
+      <h2>Uso del sitio web</h2>
+      <p>
+        La persona usuaria se compromete a utilizar este sitio web de forma lícita, respetuosa y conforme a
+        la normativa aplicable. No está permitido emplear sus contenidos con fines ilícitos o que puedan
+        perjudicar a Azurea Catering o a terceros.
+      </p>
+
+      <h2>Propiedad intelectual</h2>
+      <p>
+        Los textos, diseño, identidad visual y elementos de esta web forman parte de la presencia digital de
+        Azurea Catering. Queda prohibida su reproducción no autorizada.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+

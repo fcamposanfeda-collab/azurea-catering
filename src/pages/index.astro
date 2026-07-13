@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/ui/Button.astro';
+import ContactForm from '../components/forms/ContactForm.astro';
+import BudgetSection from '../components/sections/BudgetSection.astro';
+import { getPageMeta } from '../data/pages-meta';
+import { routes } from '../data/routes';
+import { contact } from '../data/site';
+import { formats, process, serviceCards, values } from '../data/content';
+
+const meta = getPageMeta('/');
+---
+
+<BaseLayout title={meta.title} description={meta.description}>
+  <section class="hero">
+    <div class="container hero__layout">
+      <div class="hero__content" data-reveal>
+        <div class="hero__brand-badge" aria-label="Azurea Catering">
+          <img
+            src="/images/optimized/logo-azurea.webp"
+            alt="Logotipo de Azurea Catering"
+            width="50"
+            height="34"
+          />
+          <span>Azurea Catering</span>
+        </div>
+        <h1>Eventos con sabor, elegancia y gusto.</h1>
+        <p class="lead">
+          Diseñamos celebraciones que se recuerdan por cómo saben, cómo <br />
+          se viven y cómo se sienten. Desde bodas hasta eventos de empresa, <br />
+          creamos propuestas de catering personalizadas para que cada <br />
+          celebración sea como la habías imaginado.
+        </p>
+        <div class="hero__actions">
+          <Button href={routes.contact} size="lg">Solicitar presupuesto</Button>
+          <Button href={routes.services} variant="outline" size="lg">Ver servicios</Button>
+        </div>
+      </div>
+
+      <div class="hero__visual" aria-label="Mesa de celebración elegante" data-reveal>
+        <div class="hero__note">
+          <strong>Tu presupuesto, tus opciones.</strong>
+          <p>Catering y celebraciones adaptadas a lo que quieres invertir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center" data-reveal>
+        <span class="eyebrow">Qué hacemos</span>
+        <h2>Catering para cada tipo de celebración</h2>
+        <p class="lead">
+          El objetivo no es solo servir comida: es construir una experiencia cómoda, bonita y coherente
+          con el momento que quieres vivir.
+        </p>
+      </div>
+      <div class="grid grid--4">
+        {
+          serviceCards.map((service) => (
+            <a class="card" href={service.href} data-reveal>
+              <span class="card__meta">Azurea</span>
+              <h3>{service.title}</h3>
+              <p>{service.text}</p>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <BudgetSection />
+
+  <section class="section section--cream">
+    <div class="container split">
+      <div data-reveal>
+        <span class="eyebrow">La esencia</span>
+        <h2>Una propuesta cuidada desde la primera conversación</h2>
+        <p class="lead">
+          Azurea combina cocina adaptable, presentación elegante y un servicio cercano para que el evento
+          se sienta fluido de principio a fin.
+        </p>
+        <ul class="feature-list">
+          {values.map((value) => <li><strong>{value.title}.</strong>&nbsp;{value.text}</li>)}
+        </ul>
+      </div>
+      <div
+        class="split__media"
+        style="--image: url('/images/optimized/azurea-mesa-exterior.webp'); --image-position: center 74%;"
+        aria-hidden="true"
+        data-reveal
+      >
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="banner" data-reveal>
+        <span class="eyebrow">Cómo trabajamos</span>
+        <h2>Un proceso sencillo para que todo quede claro</h2>
+        <div class="grid grid--4">
+          {process.map((step, index) => <p><strong>0{index + 1}.</strong> {step}</p>)}
+        </div>
+        <div class="cta-actions">
+          <Button href={routes.contact} variant="secondary" size="lg">Cuéntanos tu evento</Button>
+          <Button href={routes.weddings} variant="ghost" size="lg">Ver bodas</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="eyebrow">Formatos</span>
+        <h2>Del cóctel informal al menú servido en mesa</h2>
+        <p class="lead">
+          Diseñamos el formato según el espacio, la hora, el estilo del evento y la experiencia que quieres
+          para tus invitados.
+        </p>
+      </div>
+      <div class="grid grid--3">
+        {formats.map((format, index) => <div class="card card--dark" data-reveal><span class="card__number">0{index + 1}</span><h3>{format}</h3></div>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="disena-tu-evento">
+    <div class="container">
+      <div class="section-header section-header--center" data-reveal>
+        <span class="eyebrow">Diseña tu evento</span>
+        <h2>Cuéntanos la idea y la hacemos posible</h2>
+        <p class="lead">
+          Temática, decoración, comida, corners especiales… tú imaginas el día, marcas tu presupuesto y
+          nosotros te presentamos opciones reales para hacerlo posible.
+        </p>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-panel" data-reveal>
+          <h3>¿Qué puedes incluir?</h3>
+          <ul class="feature-list">
+            <li>Temática y estética alineadas con el menú y la decoración.</li>
+            <li>Corners de glitter, fotos instantáneas, candy bar o mesa dulce.</li>
+            <li>Estaciones de vino, queso, jamón o el producto que tengas en mente.</li>
+            <li>Propuestas adaptadas al presupuesto que quieras destinar al evento.</li>
+          </ul>
+          <div class="cta-actions">
+            <Button href={routes.createEvent} variant="outline" size="md">Ver más ideas</Button>
+            <Button href={contact.whatsapp} variant="secondary" size="md">WhatsApp</Button>
+          </div>
+        </div>
+        <div class="contact-panel" data-reveal>
+          <ContactForm />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
