@@ -1,7 +1,5 @@
 ---
 import { contact } from '../../data/site';
-
-const isConfigured = Boolean(import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY);
 ---
 
 <h3 class="contact-form__title">Te ayudamos con tu evento especial</h3>
@@ -40,24 +38,11 @@ const isConfigured = Boolean(import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY);
 
   <p class="contact-form__status" data-form-status hidden></p>
 
-  <button type="submit" class="btn btn--primary btn--lg">
-    {isConfigured ? 'Enviar solicitud' : 'Preparar email de solicitud'}
-  </button>
+  <button type="submit" class="btn btn--primary btn--lg">Enviar solicitud</button>
   <p class="contact-form__note">
-    {
-      isConfigured ? (
-        <>
-          Recibirás respuesta en breve. También puedes escribir a{' '}
-          <a href={`mailto:${contact.email}`}>{contact.email}</a> o llamar al{' '}
-          <a href={`tel:${contact.phone}`}>{contact.phoneDisplay}</a>.
-        </>
-      ) : (
-        <>
-          También puedes escribir a <a href={`mailto:${contact.email}`}>{contact.email}</a> o llamar al{' '}
-          <a href={`tel:${contact.phone}`}>{contact.phoneDisplay}</a>.
-        </>
-      )
-    }
+    Recibirás respuesta en breve. También puedes escribir a{' '}
+    <a href={`mailto:${contact.email}`}>{contact.email}</a> o llamar al{' '}
+    <a href={`tel:${contact.phone}`}>{contact.phoneDisplay}</a>.
   </p>
 </form>
 

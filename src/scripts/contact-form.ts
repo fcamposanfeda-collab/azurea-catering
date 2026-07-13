@@ -1,4 +1,6 @@
-const FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+import { contact } from '../data/site';
+
+const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
 function showStatus(form: HTMLFormElement, type: 'success' | 'error', message: string) {
   const status = form.querySelector<HTMLElement>('[data-form-status]');
@@ -10,14 +12,17 @@ function showStatus(form: HTMLFormElement, type: 'success' | 'error', message: s
   status.classList.add(`contact-form__status--${type}`);
 }
 
-function fallbackMailto(form: HTMLFormElement, email: string) {
-  const data = new FormData(form);
-  const subject = encodeURIComponent('Solicitud de presupuesto Azurea Catering');
-  const body = encodeURIComponent(
+async function submitWithWeb3Forms(form: HTMLFormElement, accessKey: string, data: FormData) {
+  const payload = new FormData();
+  payload.append('access_key', accessKey);
+  payload.append('subject', 'Solicitud de presupuesto Azurea Catering');
+  payload.append('from_name', 'Web Azurea Catering');
+  payload.append('name', String(data.get('nombre') ?? ''));
+  payload.append('email', String(data.get('email') ?? ''));
+  payload.append('phone', String(data.get('telefono') ?? ''));
+  payload.append(
+    'message',
     [
-      `Nombre: ${data.get('nombre') ?? ''}`,
-      `Teléfono: ${data.get('telefono') ?? ''}`,
-      `Email: ${data.get('email') ?? ''}`,
       `Tipo de evento: ${data.get('evento') ?? ''}`,
       '',
       'Detalles:',
@@ -25,10 +30,41 @@ function fallbackMailto(form: HTMLFormElement, email: string) {
     ].join('\n'),
   );
 
-  window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+  const response = await fetch(WEB3FORMS_ENDPOINT, { method: 'POST', body: payload });
+  const result = (await response.json()) as { success?: boolean; message?: string };
+
+  if (!response.ok || !result.success) {
+    throw new Error(result.message ?? 'No se pudo enviar el formulario.');
+  }
 }
 
-function initContactForms(accessKey: string, contactEmail: string) {
+async function submitWithFormSubmit(data: FormData) {
+  const response = await fetch(`https://formsubmit.co/ajax/${contact.email}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify({
+      name: String(data.get('nombre') ?? ''),
+      email: String(data.get('email') ?? ''),
+      phone: String(data.get('telefono') ?? ''),
+      evento: String(data.get('evento') ?? ''),
+      message: String(data.get('mensaje') ?? ''),
+      _subject: 'Solicitud de presupuesto Azurea Catering',
+      _template: 'table',
+      _captcha: 'false',
+    }),
+  });
+
+  const result = (await response.json()) as { success?: string };
+
+  if (!response.ok || result.success !== 'true') {
+    throw new Error('No se pudo enviar el formulario.');
+  }
+}
+
+function initContactForms(accessKey: string) {
   document.querySelectorAll<HTMLFormElement>('[data-contact-form]').forEach((form) => {
     const submitButton = form.querySelector<HTMLButtonElement>('button[type="submit"]');
     const defaultLabel = submitButton?.textContent?.trim() ?? 'Enviar solicitud';
@@ -36,42 +72,24 @@ function initContactForms(accessKey: string, contactEmail: string) {
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
 
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
       const honeypot = form.querySelector<HTMLInputElement>('input[name="botcheck"]');
       if (honeypot?.checked) return;
 
       const data = new FormData(form);
 
-      if (!accessKey) {
-        fallbackMailto(form, contactEmail);
-        return;
-      }
-
-      const payload = new FormData();
-      payload.append('access_key', accessKey);
-      payload.append('subject', 'Solicitud de presupuesto Azurea Catering');
-      payload.append('from_name', 'Web Azurea Catering');
-      payload.append('name', String(data.get('nombre') ?? ''));
-      payload.append('email', String(data.get('email') ?? ''));
-      payload.append('phone', String(data.get('telefono') ?? ''));
-      payload.append(
-        'message',
-        [
-          `Tipo de evento: ${data.get('evento') ?? ''}`,
-          '',
-          'Detalles:',
-          `${data.get('mensaje') ?? ''}`,
-        ].join('\n'),
-      );
-
       submitButton?.setAttribute('disabled', 'true');
       if (submitButton) submitButton.textContent = 'Enviando…';
 
       try {
-        const response = await fetch(FORMS_ENDPOINT, { method: 'POST', body: payload });
-        const result = (await response.json()) as { success?: boolean; message?: string };
-
-        if (!response.ok || !result.success) {
-          throw new Error(result.message ?? 'No se pudo enviar el formulario.');
+        if (accessKey) {
+          await submitWithWeb3Forms(form, accessKey, data);
+        } else {
+          await submitWithFormSubmit(data);
         }
 
         form.reset();
@@ -84,7 +102,7 @@ function initContactForms(accessKey: string, contactEmail: string) {
         showStatus(
           form,
           'error',
-          `No pudimos enviar el formulario. Escríbenos a ${contactEmail} o llámanos directamente.`,
+          `No pudimos enviar el formulario. Escríbenos a ${contact.email} o llámanos al ${contact.phoneDisplay}.`,
         );
       } finally {
         submitButton?.removeAttribute('disabled');
@@ -95,6 +113,5 @@ function initContactForms(accessKey: string, contactEmail: string) {
 }
 
 const accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
-const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL ?? 'comercial@azureacatering.com';
 
-initContactForms(accessKey, contactEmail);
+initContactForms(accessKey);

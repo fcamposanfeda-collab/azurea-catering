@@ -9,7 +9,7 @@ export const site = {
 };
 
 export const contact = {
-  email: 'comercial@azureacatering.com',
+  email: 'azureacatering@gmail.com',
   phone: '+34635197898',
   phoneDisplay: '+34 635 197 898',
   whatsapp: 'https://wa.me/34635197898',
