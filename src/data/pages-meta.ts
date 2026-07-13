@@ -3,44 +3,44 @@ import { site } from './site';
 
 export const pagesMeta = {
   '/': {
-    title: `Catering en ${local.city} y ${local.region} | ${site.name}`,
+    title: `Catering en ${local.province} | ${site.name}`,
     description:
-      'Catering profesional para bodas, comuniones y eventos en Ciudad Real y Castilla-La Mancha. Menús personalizados, servicio cuidado y presupuesto a tu medida.',
+      'Catering profesional para bodas, comuniones y eventos en la provincia de Ciudad Real. Menús personalizados, servicio cuidado y presupuesto a tu medida.',
   },
   '/servicios': {
     title: `Servicios de catering para eventos | ${site.name}`,
     description:
-      'Cócteles, menús servidos, buffets y propuestas a medida en Ciudad Real y provincia. Bodas, comuniones, empresas y celebraciones privadas.',
+      'Cócteles, menús servidos, buffets y propuestas a medida en la provincia de Ciudad Real. Bodas, comuniones, empresas y celebraciones privadas.',
   },
   '/bodas': {
-    title: `Catering para bodas en ${local.city} | ${site.name}`,
+    title: `Catering para bodas en ${local.province} | ${site.name}`,
     description:
-      'Catering de boda con menús personalizados, cóctel de bienvenida y servicio en mesa. Acompañamiento completo en Ciudad Real y Castilla-La Mancha.',
+      'Catering de boda con menús personalizados, cóctel de bienvenida y servicio en mesa. Acompañamiento completo en la provincia de Ciudad Real.',
   },
   '/comuniones': {
-    title: `Catering para comuniones en ${local.city} | ${site.name}`,
+    title: `Catering para comuniones en ${local.province} | ${site.name}`,
     description:
-      'Catering para comuniones y celebraciones familiares en Ciudad Real y alrededores. Menús para adultos y niños, presentación cuidada y opciones según presupuesto.',
+      'Catering para comuniones y celebraciones familiares en la provincia de Ciudad Real. Menús para adultos y niños, presentación cuidada y opciones según presupuesto.',
   },
   '/eventos': {
     title: `Catering corporativo y eventos privados | ${site.name}`,
     description:
-      'Catering para empresas, cumpleaños y eventos en Castilla-La Mancha. Servicio flexible y profesional con propuestas adaptadas a cada ocasión.',
+      'Catering para empresas, cumpleaños y eventos en la provincia de Ciudad Real. Servicio flexible y profesional con propuestas adaptadas a cada ocasión.',
   },
   '/crea-tu-evento': {
     title: `Eventos personalizados y temáticos | ${site.name}`,
     description:
-      'Diseña tu evento con temática, decoración, comida y corners especiales. Catering creativo en Ciudad Real para celebraciones únicas.',
+      'Diseña tu evento con temática, decoración, comida y corners especiales. Catering creativo en la provincia de Ciudad Real para celebraciones únicas.',
   },
   '/sobre-azurea': {
-    title: `Sobre ${site.name} | Catering en ${local.city}`,
+    title: `Sobre ${site.name} | Catering en ${local.province}`,
     description:
-      'Conoce Azurea Catering: catering personalizado para eventos en Ciudad Real y Castilla-La Mancha. Calidad, creatividad y atención al detalle.',
+      'Conoce Azurea Catering: catering personalizado para eventos en la provincia de Ciudad Real. Calidad, creatividad y atención al detalle.',
   },
   '/contacto': {
-    title: `Contacto y presupuesto | ${site.name} ${local.city}`,
+    title: `Contacto y presupuesto | ${site.name}`,
     description:
-      'Pide presupuesto de catering para bodas, comuniones o eventos en Ciudad Real. Teléfono, email, WhatsApp y formulario de contacto.',
+      'Pide presupuesto de catering para bodas, comuniones o eventos en la provincia de Ciudad Real. Teléfono, email, WhatsApp y formulario de contacto.',
   },
   '/aviso-legal': {
     title: `Aviso legal | ${site.name}`,

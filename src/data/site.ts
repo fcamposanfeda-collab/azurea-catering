@@ -3,7 +3,7 @@ export const site = {
   url: 'https://azureacatering.com',
   lang: 'es',
   description:
-    'Catering profesional para bodas, comuniones, eventos privados y empresas en Ciudad Real y Castilla-La Mancha. Propuestas personalizadas con una puesta en escena elegante.',
+    'Catering profesional para bodas, comuniones, eventos privados y empresas en la provincia de Ciudad Real. Propuestas personalizadas con una puesta en escena elegante.',
   ogImage: '/images/optimized/azurea-mesa-exterior.webp',
   copyright: `© ${new Date().getFullYear()} Azurea Catering. Todos los derechos reservados.`,
 };

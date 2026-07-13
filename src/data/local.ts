@@ -1,6 +1,7 @@
-/** Datos de geolocalización para SEO y schema.org (Ciudad Real / Castilla-La Mancha). */
+/** Datos de geolocalización para SEO y schema.org (provincia de Ciudad Real). */
 export const local = {
   city: 'Ciudad Real',
+  province: 'Provincia de Ciudad Real',
   region: 'Castilla-La Mancha',
   country: 'España',
   countryCode: 'ES',
@@ -10,16 +11,7 @@ export const local = {
     latitude: 38.986,
     longitude: -3.9273,
   },
-  /** Zonas donde Azurea suele trabajar; también se desplaza según el evento. */
-  areaServed: [
-    'Ciudad Real',
-    'Provincia de Ciudad Real',
-    'Castilla-La Mancha',
-    'Toledo',
-    'Albacete',
-    'Cuenca',
-    'Guadalajara',
-  ],
-  /** Frase breve reutilizable en copy visible (sin forzar la geolocalización). */
-  serviceAreaShort: 'Ciudad Real, Castilla-La Mancha y alrededores',
+  areaServed: ['Provincia de Ciudad Real'],
+  /** Frase breve reutilizable en copy visible. */
+  serviceAreaShort: 'la provincia de Ciudad Real',
 } as const;
