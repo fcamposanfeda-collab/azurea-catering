@@ -6,6 +6,8 @@ import { routes } from '../../data/routes';
 
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 const isActive = (href: string) => href !== '/' && currentPath.startsWith(href);
+const hasChildren = (item: (typeof mainNav)[number]): item is Extract<(typeof mainNav)[number], { children: unknown }> =>
+  'children' in item;
 ---
 
 <header class="site-header">
@@ -28,17 +30,54 @@ const isActive = (href: string) => href !== '/' && currentPath.startsWith(href);
     <nav id="main-navigation" class="site-header__nav" aria-label="Navegación principal" data-nav-menu>
       <ul class="site-header__list">
         {
-          mainNav.map((item) => (
-            <li>
-              <a
-                href={item.href}
-                class:list={['site-header__link', { 'is-active': isActive(item.href) }]}
-                aria-current={isActive(item.href) ? 'page' : undefined}
-              >
-                {item.label}
-              </a>
-            </li>
-          ))
+          mainNav.map((item) =>
+            hasChildren(item) ? (
+              <li class:list={['site-header__item', 'site-header__item--has-sub', { 'is-active': isActive(item.href) || item.children.some((child) => isActive(child.href)) }]}>
+                <button
+                  type="button"
+                  class:list={['site-header__link', 'site-header__link--parent', { 'is-active': isActive(item.href) || item.children.some((child) => isActive(child.href)) }]}
+                  aria-expanded="false"
+                  aria-controls={`submenu-${item.href.replace(/\//g, '')}`}
+                  data-submenu-toggle
+                >
+                  {item.label}
+                  <span class="site-header__caret" aria-hidden="true"></span>
+                </button>
+                <ul class="site-header__submenu" id={`submenu-${item.href.replace(/\//g, '')}`} data-submenu>
+                  <li>
+                    <a
+                      href={item.href}
+                      class:list={['site-header__sublink', { 'is-active': isActive(item.href) && !item.children.some((child) => isActive(child.href)) }]}
+                      aria-current={isActive(item.href) && !item.children.some((child) => isActive(child.href)) ? 'page' : undefined}
+                    >
+                      Ver todos
+                    </a>
+                  </li>
+                  {item.children.map((child) => (
+                    <li>
+                      <a
+                        href={child.href}
+                        class:list={['site-header__sublink', { 'is-active': isActive(child.href) }]}
+                        aria-current={isActive(child.href) ? 'page' : undefined}
+                      >
+                        {child.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ) : (
+              <li class="site-header__item">
+                <a
+                  href={item.href}
+                  class:list={['site-header__link', { 'is-active': isActive(item.href) }]}
+                  aria-current={isActive(item.href) ? 'page' : undefined}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ),
+          )
         }
       </ul>
       <Button href={routes.contact} variant="primary" size="md" class="site-header__cta">
@@ -52,19 +91,53 @@ const isActive = (href: string) => href !== '/' && currentPath.startsWith(href);
   const toggle = document.querySelector<HTMLButtonElement>('[data-nav-toggle]');
   const menu = document.querySelector<HTMLElement>('[data-nav-menu]');
 
+  const closeMenu = () => {
+    toggle?.setAttribute('aria-expanded', 'false');
+    menu?.classList.remove('is-open');
+    document.body.classList.remove('nav-open');
+    menu?.querySelectorAll<HTMLButtonElement>('[data-submenu-toggle]').forEach((button) => {
+      button.setAttribute('aria-expanded', 'false');
+      button.closest('.site-header__item')?.classList.remove('is-open');
+    });
+  };
+
   toggle?.addEventListener('click', () => {
     const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!isOpen));
-    menu?.classList.toggle('is-open', !isOpen);
-    document.body.classList.toggle('nav-open', !isOpen);
+    if (isOpen) {
+      closeMenu();
+      return;
+    }
+    toggle.setAttribute('aria-expanded', 'true');
+    menu?.classList.add('is-open');
+    document.body.classList.add('nav-open');
+  });
+
+  menu?.querySelectorAll<HTMLButtonElement>('[data-submenu-toggle]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const item = button.closest('.site-header__item');
+      const isOpen = button.getAttribute('aria-expanded') === 'true';
+      menu.querySelectorAll<HTMLButtonElement>('[data-submenu-toggle]').forEach((other) => {
+        if (other !== button) {
+          other.setAttribute('aria-expanded', 'false');
+          other.closest('.site-header__item')?.classList.remove('is-open');
+        }
+      });
+      button.setAttribute('aria-expanded', String(!isOpen));
+      item?.classList.toggle('is-open', !isOpen);
+    });
   });
 
   menu?.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      toggle?.setAttribute('aria-expanded', 'false');
-      menu.classList.remove('is-open');
-      document.body.classList.remove('nav-open');
-    });
+    link.addEventListener('click', () => closeMenu());
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!(event.target instanceof Node)) return;
+    if (!menu?.contains(event.target) && !toggle?.contains(event.target)) {
+      menu?.querySelectorAll<HTMLButtonElement>('[data-submenu-toggle]').forEach((button) => {
+        button.setAttribute('aria-expanded', 'false');
+        button.closest('.site-header__item')?.classList.remove('is-open');
+      });
+    }
   });
 </script>
-

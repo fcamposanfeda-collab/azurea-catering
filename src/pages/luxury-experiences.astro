@@ -1,0 +1,189 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/ui/Button.astro';
+import LuxuryTravelForm from '../components/forms/LuxuryTravelForm.astro';
+import { getPageMeta } from '../data/pages-meta';
+import { luxuryExperiences, luxuryPillars, luxuryProcess } from '../data/luxury';
+import { contact, site } from '../data/site';
+import { routes } from '../data/routes';
+
+const meta = getPageMeta('/luxury-experiences');
+
+const travelSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'TravelAgency',
+  name: `${site.name} Luxury Experiences`,
+  url: new URL(routes.luxury, site.url).href,
+  description: meta.description,
+  email: contact.email,
+  telephone: contact.phoneDisplay,
+  areaServed: ['Spain', 'España', 'Castilla-La Mancha', 'Andalucía', 'Costa del Sol'],
+  knowsAbout: [
+    'Luxury travel Spain',
+    'Bespoke Spain holidays',
+    'Private transfers',
+    'Wine tourism',
+    'Estate stays',
+    'Coastal experiences',
+  ],
+};
+---
+
+<BaseLayout title={meta.title} description={meta.description}>
+  <meta
+    slot="head"
+    name="keywords"
+    content="luxury travel Spain, bespoke Spain holidays, private luxury tours Spain, tailor-made Spain trip, viajes de lujo España, turismo lujo extranjeros España, Azurea Luxury Experiences"
+  />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(travelSchema)} />
+
+  <section class="page-hero luxury-hero">
+    <div class="container section-header" data-reveal>
+      <span class="eyebrow">Luxury Experiences</span>
+      <h1>Viajes de lujo a medida por España</h1>
+      <p class="lead">
+        Diseñamos vacaciones privadas para viajeros internacionales que quieren descubrir España
+        sin preocuparse de nada: gastronomía, paisaje, mar, fincas históricas y experiencias exclusivas,
+        organizadas alrededor de lo que vosotros queréis vivir.
+      </p>
+      <p class="luxury-hero__en">
+        Bespoke luxury travel in Spain for international guests. Tell us what you love — we arrange
+        everything from arrival to every private experience.
+      </p>
+      <div class="cta-actions">
+        <Button href="#disena-tu-viaje" size="lg">Diseñar mi viaje</Button>
+        <Button href={`tel:${contact.phone}`} variant="ghost" size="lg">Llamar ahora</Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center" data-reveal>
+        <span class="eyebrow">La idea</span>
+        <h2>España, a vuestro ritmo y con vuestro estilo</h2>
+        <p class="lead">
+          Azurea Luxury Experiences no vende paquetes cerrados. Escuchamos qué os interesa y
+          construimos un itinerario privado: llegada, traslados, noches, gastronomía, mar, campo o ciudad.
+        </p>
+      </div>
+      <div class="grid grid--3">
+        {
+          luxuryPillars.map((pillar) => (
+            <div class="card" data-reveal>
+              <h3>{pillar.title}</h3>
+              <p>{pillar.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="container split">
+      <div data-reveal>
+        <span class="eyebrow">Llegada premium</span>
+        <h2>Desde el aeropuerto o el helipuerto hasta la finca</h2>
+        <p class="lead">
+          Os recogemos a la llegada —ya sea en aeropuerto comercial o en jet privado— y os
+          trasladamos con coches clásicos. Cerca de nuestra finca disponemos de helipuerto, para que
+          el viaje empiece con una bienvenida memorable.
+        </p>
+        <ul class="feature-list">
+          <li>Recogida privada y coordinación de vuelos.</li>
+          <li>Traslado en coches antiguos con estilo y comodidad.</li>
+          <li>Primera noche en la finca para aterrizar con calma.</li>
+          <li>A partir de ahí, cada día se diseña según vuestros intereses.</li>
+        </ul>
+      </div>
+      <div
+        class="split__media"
+        style="--image: url('/images/optimized/luxury-sevilla.webp'); --image-position: center 72%;"
+        aria-hidden="true"
+        data-reveal
+      >
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-header section-header--center" data-reveal>
+        <span class="eyebrow">Experiencias</span>
+        <h2>Lo que podemos organizar para vosotros</h2>
+        <p class="lead">
+          Estas son algunas de las piezas con las que construimos cada viaje. Vosotros elegís el
+          acento: más mar, más campo, más gastronomía, más norte o más Andalucía.
+        </p>
+      </div>
+      <div class="grid grid--4">
+        {
+          luxuryExperiences.map((item) => (
+            <div class="card card--dark" data-reveal>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div
+        class="split__media"
+        style="--image: url('/images/optimized/luxury-gastronomia.webp'); --image-position: center 40%;"
+        aria-hidden="true"
+        data-reveal
+      >
+      </div>
+      <div data-reveal>
+        <span class="eyebrow">Sin preocupaciones</span>
+        <h2>Vosotros disfrutáis.<br />Nosotros resolvemos cada detalle.</h2>
+        <p class="lead">
+          Reservas de spa, restaurantes, barcos, rutas a caballo, noches en haciendas como La Incosa,
+          El Rocío o escapadas al norte: lo encajamos en un único itinerario coherente y privado.
+        </p>
+        <ul class="feature-list">
+          <li>Un solo interlocutor para todo el viaje.</li>
+          <li>Propuestas adaptadas al presupuesto que queréis destinar.</li>
+          <li>Flexibilidad real si durante la estancia queréis cambiar el ritmo.</li>
+          <li>Enfoque premium para viajeros que llegan de fuera de España.</li>
+        </ul>
+        <div class="cta-actions">
+          <Button href="#disena-tu-viaje" size="lg">Pedir propuesta</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="container">
+      <div class="banner" data-reveal>
+        <span class="eyebrow">Cómo trabajamos</span>
+        <h2>Un proceso claro para un viaje impecable</h2>
+        <div class="grid grid--4">
+          {luxuryProcess.map((step, index) => <p><strong>0{index + 1}.</strong> {step}</p>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="disena-tu-viaje">
+    <div class="container">
+      <div class="section-header section-header--center" data-reveal>
+        <span class="eyebrow">Solicitar propuesta</span>
+        <h2>Cuéntanos qué viaje quieres vivir en España</h2>
+        <p class="lead">
+          Completa el formulario con todo lo que puedas. Cuanta más información nos des, más precisa
+          será la primera propuesta privada que te enviemos.
+        </p>
+      </div>
+      <div class="luxury-form-wrap" data-reveal>
+        <LuxuryTravelForm />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

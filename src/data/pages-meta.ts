@@ -32,6 +32,11 @@ export const pagesMeta = {
     description:
       'Diseña tu evento con temática, decoración, comida y corners especiales. Catering creativo en la provincia de Ciudad Real para celebraciones únicas.',
   },
+  '/luxury-experiences': {
+    title: `Luxury Travel Spain | Viajes de lujo a medida | ${site.name}`,
+    description:
+      'Bespoke luxury travel in Spain for international guests. Private arrivals, estate stays, wine tastings, coast, El Rocío and tailor-made itineraries with Azurea Luxury Experiences.',
+  },
   '/sobre-azurea': {
     title: `Sobre ${site.name} | Catering en ${local.province}`,
     description:
@@ -65,6 +70,7 @@ export const breadcrumbLabels: Record<PagePath, string> = {
   '/comuniones': 'Catering para comuniones',
   '/eventos': 'Eventos y empresas',
   '/crea-tu-evento': 'Crea tu evento',
+  '/luxury-experiences': 'Luxury Experiences',
   '/sobre-azurea': 'Sobre Azurea',
   '/contacto': 'Contacto',
   '/aviso-legal': 'Aviso legal',

@@ -1,0 +1,165 @@
+---
+import { contact } from '../../data/site';
+import { luxuryBudgetOptions, luxuryInterestOptions } from '../../data/luxury';
+---
+
+<form class="contact-form luxury-form" data-contact-form data-form-type="luxury" novalidate>
+  <input type="checkbox" name="botcheck" class="contact-form__honeypot" tabindex="-1" autocomplete="off" />
+  <input type="hidden" name="formulario" value="Luxury Experiences" />
+
+  <div class="luxury-form__section" data-reveal>
+    <h3 class="contact-form__title">Comienza a diseñar tu viaje</h3>
+    <p class="luxury-form__intro">
+      Cuéntanos cómo imaginas tu experiencia en España. Con esa información prepararemos una propuesta
+      privada y a medida.
+    </p>
+  </div>
+
+  <fieldset class="luxury-form__fieldset">
+    <legend>Sobre el viaje</legend>
+
+    <label>
+      ¿Qué zonas de España te interesan?
+      <input
+        type="text"
+        name="destinos"
+        placeholder="Ej. Castilla-La Mancha, Andalucía, norte de España, costa…"
+        required
+      />
+    </label>
+
+    <div class="luxury-form__block">
+      <p class="luxury-form__label">¿Qué te gustaría vivir? Puedes elegir varias opciones</p>
+      <div class="luxury-form__checks">
+        {
+          luxuryInterestOptions.map((option) => (
+            <label class="luxury-form__check">
+              <input type="checkbox" name="intereses" value={option} />
+              <span>{option}</span>
+            </label>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="form-grid">
+      <label>
+        ¿Cuándo quieres viajar?
+        <select name="fechas_tipo" required>
+          <option value="">Selecciona una opción</option>
+          <option value="Fechas flexibles">Aún no lo sé / fechas flexibles</option>
+          <option value="Fechas cerradas">Tengo fechas cerradas</option>
+        </select>
+      </label>
+      <label>
+        Fechas aproximadas
+        <input type="text" name="fechas" placeholder="Ej. primavera 2027 / 12–20 septiembre" />
+      </label>
+    </div>
+
+    <div class="form-grid">
+      <label>
+        Número de adultos
+        <select name="adultos" required>
+          <option value="">Selecciona</option>
+          {Array.from({ length: 12 }, (_, i) => (
+            <option value={String(i + 1)}>{i + 1}</option>
+          ))}
+        </select>
+      </label>
+      <label>
+        Número de niños
+        <select name="ninos">
+          <option value="0">0</option>
+          {Array.from({ length: 8 }, (_, i) => (
+            <option value={String(i + 1)}>{i + 1}</option>
+          ))}
+        </select>
+      </label>
+    </div>
+
+    <div class="form-grid">
+      <label>
+        Noches aproximadas
+        <input type="number" name="noches" min="1" max="60" placeholder="Ej. 7" />
+      </label>
+      <label>
+        Presupuesto estimado por persona
+        <select name="presupuesto" required>
+          <option value="">Selecciona una opción</option>
+          {luxuryBudgetOptions.map((option) => <option value={option}>{option}</option>)}
+        </select>
+      </label>
+    </div>
+
+    <label>
+      Preferencia de llegada
+      <select name="llegada" required>
+        <option value="">Selecciona una opción</option>
+        <option value="Aeropuerto comercial">Aeropuerto comercial</option>
+        <option value="Jet privado / helipuerto">Jet privado / helipuerto</option>
+        <option value="Aún no lo sé">Aún no lo sé</option>
+      </select>
+    </label>
+
+    <label>
+      Cuéntanos la idea del viaje
+      <textarea
+        name="mensaje"
+        rows="5"
+        required
+        placeholder="Ritmo, estilo, celebraciones especiales, intereses concretos…"
+      ></textarea>
+    </label>
+  </fieldset>
+
+  <fieldset class="luxury-form__fieldset">
+    <legend>Datos personales</legend>
+
+    <div class="form-grid">
+      <label>
+        Nombre
+        <input type="text" name="nombre" autocomplete="given-name" required />
+      </label>
+      <label>
+        Apellidos
+        <input type="text" name="apellidos" autocomplete="family-name" required />
+      </label>
+    </div>
+
+    <div class="form-grid">
+      <label>
+        Email
+        <input type="email" name="email" autocomplete="email" required />
+      </label>
+      <label>
+        Teléfono / WhatsApp
+        <input type="tel" name="telefono" autocomplete="tel" required />
+      </label>
+    </div>
+
+    <div class="form-grid">
+      <label>
+        País de residencia
+        <input type="text" name="pais" autocomplete="country-name" required />
+      </label>
+      <label>
+        Ciudad
+        <input type="text" name="ciudad" autocomplete="address-level2" />
+      </label>
+    </div>
+  </fieldset>
+
+  <p class="contact-form__status" data-form-status hidden></p>
+
+  <button type="submit" class="btn btn--primary btn--lg">Solicitar propuesta de viaje</button>
+  <p class="contact-form__note">
+    Te responderemos en privado con una primera propuesta. También puedes escribir a{' '}
+    <a href={`mailto:${contact.email}`}>{contact.email}</a> o llamar al{' '}
+    <a href={`tel:${contact.phone}`}>{contact.phoneDisplay}</a>.
+  </p>
+</form>
+
+<script>
+  import '../../scripts/contact-form.ts';
+</script>
