@@ -9,3 +9,10 @@ dist
 public/images/*
 !public/images/optimized/
 !public/images/optimized/**
+
+# Material comercial interno (dossiers, menús competencia, extractos). No publicar.
+dossiers/
+referencia-interna/
+tmp-dossiers/
+*.pdf
+*.docx
