@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/ui/Button.astro';
+import SplitPhoto from '../components/ui/SplitPhoto.astro';
 import PhotoGallery from '../components/ui/PhotoGallery.astro';
 import BudgetCallout from '../components/ui/BudgetCallout.astro';
 import { getPageMeta } from '../data/pages-meta';
@@ -17,7 +18,7 @@ const meta = getPageMeta('/sobre-azurea');
       <span class="eyebrow">Sobre Azurea</span>
       <h1>Una forma elegante y cercana de entender el catering</h1>
       <p class="lead">
-        {brand.claim} Desde la provincia de Ciudad Real, acompañamos cada celebración con cercanía y
+        {brand.claim} Desde Ciudad Real, acompañamos celebraciones en la ciudad, la provincia y localidades a alrededor de una hora, con cercanía y
         cuidado. La marca nace con una idea clara: que un evento se recuerde por la experiencia
         completa, no solo por el menú.
       </p>
@@ -38,13 +39,10 @@ const meta = getPageMeta('/sobre-azurea');
           <Button href={routes.contact} size="lg">Solicitar presupuesto</Button>
         </div>
       </div>
-      <div
-        class="split__media"
-        style="--image: url('/images/optimized/azurea-servicio.webp')"
-        aria-hidden="true"
-        data-reveal
-      >
-      </div>
+      <SplitPhoto
+        src="/images/optimized/azurea-servicio.webp"
+        alt="Camarero de Azurea con una bandeja de aperitivos"
+      />
     </div>
   </section>
 

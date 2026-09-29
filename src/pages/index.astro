@@ -3,15 +3,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/ui/Button.astro';
 import ContactForm from '../components/forms/ContactForm.astro';
 import BudgetSection from '../components/sections/BudgetSection.astro';
+import ServiceArea from '../components/sections/ServiceArea.astro';
 import { getPageMeta } from '../data/pages-meta';
 import { routes } from '../data/routes';
 import { contact } from '../data/site';
+import SplitPhoto from '../components/ui/SplitPhoto.astro';
 import { formats, process, serviceCards, values } from '../data/content';
 
 const meta = getPageMeta('/');
 ---
 
 <BaseLayout title={meta.title} description={meta.description}>
+  <link
+    slot="head"
+    rel="preload"
+    as="image"
+    href="/images/optimized/azurea-salon.webp"
+    type="image/webp"
+    fetchpriority="high"
+  />
   <section class="hero">
     <div class="container hero__layout">
       <div class="hero__content" data-reveal>
@@ -26,10 +36,9 @@ const meta = getPageMeta('/');
         </div>
         <h1>Eventos con sabor, elegancia y gusto.</h1>
         <p class="lead">
-          Diseñamos celebraciones que se recuerdan por cómo saben, cómo <br />
-          se viven y cómo se sienten. Desde bodas hasta eventos de empresa, <br />
-          creamos propuestas de catering personalizadas para que cada <br />
-          celebración sea como la habías imaginado.
+          Diseñamos celebraciones que se recuerdan por cómo saben, cómo se viven y cómo se sienten.
+          Desde bodas hasta eventos de empresa en Ciudad Real y a alrededor de una hora, creamos propuestas de
+          catering personalizadas para que cada celebración sea como la habías imaginado.
         </p>
         <div class="hero__actions">
           <Button href={routes.contact} size="lg">Solicitar presupuesto</Button>
@@ -37,7 +46,17 @@ const meta = getPageMeta('/');
         </div>
       </div>
 
-      <div class="hero__visual" aria-label="Mesa de celebración elegante" data-reveal>
+      <div class="hero__visual" data-reveal>
+        <img
+          class="hero__photo"
+          src="/images/optimized/azurea-salon.webp"
+          alt="Mesa servida bajo una carpa en una celebración de Azurea Catering"
+          width="1400"
+          height="1050"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <div class="hero__shade" aria-hidden="true"></div>
         <div class="hero__note">
           <strong>Tu presupuesto, tus opciones.</strong>
           <p>Catering y celebraciones adaptadas a lo que quieres invertir.</p>
@@ -70,6 +89,8 @@ const meta = getPageMeta('/');
     </div>
   </section>
 
+  <ServiceArea faq />
+
   <BudgetSection />
 
   <section class="section section--cream">
@@ -85,13 +106,11 @@ const meta = getPageMeta('/');
           {values.map((value) => <li><strong>{value.title}.</strong>&nbsp;{value.text}</li>)}
         </ul>
       </div>
-      <div
-        class="split__media"
-        style="--image: url('/images/optimized/azurea-mesa-exterior.webp'); --image-position: center 74%;"
-        aria-hidden="true"
-        data-reveal
-      >
-      </div>
+      <SplitPhoto
+        src="/images/optimized/azurea-mesa-exterior.webp"
+        alt="Mesa de aperitivos al aire libre en un evento de Azurea Catering"
+        position="center 74%"
+      />
     </div>
   </section>
 

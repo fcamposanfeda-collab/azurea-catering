@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/ui/Button.astro';
+import SplitPhoto from '../components/ui/SplitPhoto.astro';
 import BudgetCallout from '../components/ui/BudgetCallout.astro';
 import { getPageMeta } from '../data/pages-meta';
 import { routes } from '../data/routes';
@@ -15,7 +16,8 @@ const meta = getPageMeta('/bodas');
       <h1>Un catering de boda pensado hasta el último detalle</h1>
       <p class="lead">
         Una boda no es un evento más. Diseñamos una experiencia gastronómica que acompaña el día completo,
-        con propuestas adaptadas al presupuesto que queráis destinar.
+        con propuestas adaptadas al presupuesto que queráis destinar. Servimos en Ciudad Real y en
+        localidades a alrededor de una hora.
       </p>
       <BudgetCallout />
       <div class="cta-actions">
@@ -27,13 +29,10 @@ const meta = getPageMeta('/bodas');
 
   <section class="section">
     <div class="container split">
-      <div
-        class="split__media"
-        style="--image: url('/images/optimized/azurea-celebracion.webp')"
-        aria-hidden="true"
-        data-reveal
-      >
-      </div>
+      <SplitPhoto
+        src="/images/optimized/azurea-celebracion.webp"
+        alt="Invitados en el jardín durante una celebración con catering de Azurea"
+      />
       <div data-reveal>
         <span class="eyebrow">Experiencia completa</span>
         <h2>Desde el primer aperitivo hasta el último brindis</h2>

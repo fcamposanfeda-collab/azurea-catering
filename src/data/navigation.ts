@@ -34,6 +34,7 @@ export const footerNav: NavLink[] = [
   { label: 'Crea tu evento', href: routes.createEvent },
   { label: 'Luxury Experiences', href: routes.luxury },
   { label: 'Sobre Azurea', href: routes.about },
+  { label: '¿Dónde trabajamos?', href: routes.serviceArea },
   { label: 'Contacto', href: routes.contact },
 ];
 

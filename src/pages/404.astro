@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/ui/Button.astro';
+import { site } from '../data/site';
+import { routes } from '../data/routes';
+
+const title = `Página no encontrada | ${site.name}`;
+const description =
+  'La página que buscas no existe. Vuelve al inicio de Azurea Catering o pide presupuesto para tu evento.';
+---
+
+<BaseLayout title={title} description={description} noindex>
+  <section class="page-hero">
+    <div class="container section-header">
+      <span class="eyebrow">404</span>
+      <h1>Esta página no está disponible</h1>
+      <p class="lead">
+        El enlace puede haber cambiado. Puedes volver al inicio o escribirnos para preparar tu evento en
+        Ciudad Real y alrededores.
+      </p>
+      <div class="cta-actions">
+        <Button href={routes.home} size="lg">Volver al inicio</Button>
+        <Button href={routes.contact} variant="outline" size="lg">Contacto</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

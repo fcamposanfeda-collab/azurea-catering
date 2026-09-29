@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/ui/Button.astro';
+import SplitPhoto from '../components/ui/SplitPhoto.astro';
 import BudgetSection from '../components/sections/BudgetSection.astro';
 import BudgetCallout from '../components/ui/BudgetCallout.astro';
 import { getPageMeta } from '../data/pages-meta';
@@ -16,7 +17,7 @@ const meta = getPageMeta('/servicios');
       <span class="eyebrow">Servicios</span>
       <h1>Catering a medida para celebraciones totalmente personalizadas</h1>
       <p class="lead">
-        En la provincia de Ciudad Real, adaptamos bodas, comuniones, empresas y eventos privados a tu
+        En Ciudad Real y en localidades a alrededor de una hora, adaptamos bodas, comuniones, empresas y eventos privados a tu
         presupuesto: formato, menú y servicio para que la propuesta encaje con tu celebración.
       </p>
       <BudgetCallout />
@@ -55,13 +56,10 @@ const meta = getPageMeta('/servicios');
           <Button href={routes.contact} size="lg">Solicitar propuesta</Button>
         </div>
       </div>
-      <div
-        class="split__media"
-        style="--image: url('/images/optimized/azurea-aperitivos.webp')"
-        aria-hidden="true"
-        data-reveal
-      >
-      </div>
+      <SplitPhoto
+        src="/images/optimized/azurea-aperitivos.webp"
+        alt="Bandeja de aperitivos servida por Azurea Catering"
+      />
     </div>
   </section>
 

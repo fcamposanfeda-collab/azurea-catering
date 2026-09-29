@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/ui/Button.astro';
+import SplitPhoto from '../components/ui/SplitPhoto.astro';
 import BudgetCallout from '../components/ui/BudgetCallout.astro';
 import { getPageMeta } from '../data/pages-meta';
 import { routes } from '../data/routes';
@@ -15,7 +16,8 @@ const meta = getPageMeta('/eventos');
       <h1>Catering para empresas, cumpleaños y eventos privados</h1>
       <p class="lead">
         Desde un cóctel corporativo hasta una celebración íntima, creamos soluciones flexibles según el
-        presupuesto y el tipo de evento que quieras celebrar.
+        presupuesto y el tipo de evento que quieras celebrar. El servicio cubre Ciudad Real y localidades
+        a alrededor de una hora.
       </p>
       <BudgetCallout />
       <div class="cta-actions">
@@ -34,13 +36,10 @@ const meta = getPageMeta('/eventos');
 
   <section class="section section--cream">
     <div class="container split">
-      <div
-        class="split__media"
-        style="--image: url('/images/optimized/azurea-brindis.webp')"
-        aria-hidden="true"
-        data-reveal
-      >
-      </div>
+      <SplitPhoto
+        src="/images/optimized/azurea-brindis.webp"
+        alt="Servicio de cava en copas durante un evento de Azurea"
+      />
       <div data-reveal>
         <span class="eyebrow">Profesionalidad</span>
         <h2>Un servicio que se adapta al objetivo del encuentro</h2>

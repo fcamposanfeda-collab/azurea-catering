@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/ui/Button.astro';
+import SplitPhoto from '../components/ui/SplitPhoto.astro';
 import BudgetCallout from '../components/ui/BudgetCallout.astro';
 import { getPageMeta } from '../data/pages-meta';
 import { routes } from '../data/routes';
@@ -42,7 +43,8 @@ const corners = [
       <h1>Tu diseñas ese día. Nosotros lo hacemos posible.</h1>
       <p class="lead">
         Personalizamos cada evento para que todo tenga tu gusto. Tú marcas el presupuesto, nosotros te
-        damos opciones en decoración, comida, corners y cada detalle de la celebración.
+        damos opciones en decoración, comida, corners y cada detalle de la celebración, en Ciudad Real
+        y a alrededor de una hora.
       </p>
       <BudgetCallout />
       <div class="cta-actions">
@@ -68,13 +70,11 @@ const corners = [
           <li>Coordinamos el montaje para que todo se sienta unido y natural.</li>
         </ul>
       </div>
-      <div
-        class="split__media"
-        style="--image: url('/images/optimized/azurea-mesa-exterior.webp'); --image-position: center 74%;"
-        aria-hidden="true"
-        data-reveal
-      >
-      </div>
+      <SplitPhoto
+        src="/images/optimized/azurea-mesa-exterior.webp"
+        alt="Mesa de aperitivos en el jardín de un evento de Azurea Catering"
+        position="center 74%"
+      />
     </div>
   </section>
 
@@ -92,13 +92,11 @@ const corners = [
 
   <section class="section section--cream">
     <div class="container split">
-      <div
-        class="split__media"
-        style="--image: url('/images/optimized/azurea-detalle.webp'); --image-position: center 58%;"
-        aria-hidden="true"
-        data-reveal
-      >
-      </div>
+      <SplitPhoto
+        src="/images/optimized/azurea-detalle.webp"
+        alt="Plato emplatado de Azurea Catering"
+        position="center 58%"
+      />
       <div data-reveal>
         <span class="eyebrow">Corners</span>
         <h2>Rincones especiales para que el evento tenga vida propia</h2>

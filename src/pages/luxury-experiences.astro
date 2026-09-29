@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/ui/Button.astro';
+import SplitPhoto from '../components/ui/SplitPhoto.astro';
 import LuxuryTravelForm from '../components/forms/LuxuryTravelForm.astro';
 import { getPageMeta } from '../data/pages-meta';
 import { luxuryExperiences, luxuryPillars, luxuryProcess } from '../data/luxury';
@@ -97,13 +98,11 @@ const travelSchema = {
           <li>A partir de ahí, cada día se diseña según vuestros intereses.</li>
         </ul>
       </div>
-      <div
-        class="split__media"
-        style="--image: url('/images/optimized/luxury-sevilla.webp'); --image-position: center 72%;"
-        aria-hidden="true"
-        data-reveal
-      >
-      </div>
+      <SplitPhoto
+        src="/images/optimized/luxury-sevilla.webp"
+        alt="Plaza de España en Sevilla, uno de los destinos de Azurea Luxury Experiences"
+        position="center 72%"
+      />
     </div>
   </section>
 
@@ -132,13 +131,11 @@ const travelSchema = {
 
   <section class="section">
     <div class="container split">
-      <div
-        class="split__media"
-        style="--image: url('/images/optimized/luxury-gastronomia.webp'); --image-position: center 40%;"
-        aria-hidden="true"
-        data-reveal
-      >
-      </div>
+      <SplitPhoto
+        src="/images/optimized/luxury-gastronomia.webp"
+        alt="Paella junto al mar en una experiencia gastronómica de Azurea"
+        position="center 40%"
+      />
       <div data-reveal>
         <span class="eyebrow">Sin preocupaciones</span>
         <h2>Vosotros disfrutáis.<br />Nosotros resolvemos cada detalle.</h2>

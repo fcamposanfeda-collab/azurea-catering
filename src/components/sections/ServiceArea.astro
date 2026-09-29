@@ -1,0 +1,57 @@
+---
+import { serviceAreaFaqs, servicePlaces } from '../../data/local';
+
+interface Props {
+  faq?: boolean;
+}
+
+const { faq = false } = Astro.props;
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: serviceAreaFaqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<section class="section section--cream" id="donde-trabajamos">
+  <div class="container">
+    <div class="section-header section-header--center" data-reveal>
+      <span class="eyebrow">Dónde trabajamos</span>
+      <h2>Catering en Ciudad Real y a alrededor de una hora</h2>
+      <p class="lead">
+        Servimos bodas, comuniones y eventos en Ciudad Real, en la provincia y en localidades a
+        alrededor de una hora. Si tu celebración es en un pueblo, una finca o un salón de la zona,
+        cuéntanos el lugar y lo organizamos.
+      </p>
+    </div>
+    <ul class="place-list" data-reveal>
+      {servicePlaces.map((place) => <li>{place.name}</li>)}
+    </ul>
+    <p class="place-note" data-reveal>
+      También otros pueblos y fincas dentro de ese radio. Si queda un poco más lejos, pregúntanos.
+    </p>
+    {
+      faq && (
+        <div class="area-faq">
+          <h3>Preguntas sobre la zona</h3>
+          {serviceAreaFaqs.map((item) => (
+            <details data-reveal>
+              <summary>{item.question}</summary>
+              <p>{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      )
+    }
+  </div>
+</section>
+
+{faq && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/ui/Button.astro';
+import SplitPhoto from '../components/ui/SplitPhoto.astro';
 import BudgetCallout from '../components/ui/BudgetCallout.astro';
 import { getPageMeta } from '../data/pages-meta';
 import { routes } from '../data/routes';
@@ -15,7 +16,8 @@ const meta = getPageMeta('/comuniones');
       <h1>Catering para comuniones con menú personalizado para toda la familia</h1>
       <p class="lead">
         Diseñamos comuniones personalizadas, con propuestas para adultos y niños, un catering especial,
-        y opciones adaptadas a lo que necesite tu celebración.
+        y opciones adaptadas a lo que necesite tu celebración. Trabajamos en Ciudad Real y a alrededor
+        de una hora.
       </p>
       <BudgetCallout />
       <div class="cta-actions">
@@ -40,13 +42,10 @@ const meta = getPageMeta('/comuniones');
           <li>Servicio atento durante toda la celebración.</li>
         </ul>
       </div>
-      <div
-        class="split__media"
-        style="--image: url('/images/optimized/azurea-dulce.webp')"
-        aria-hidden="true"
-        data-reveal
-      >
-      </div>
+      <SplitPhoto
+        src="/images/optimized/azurea-dulce.webp"
+        alt="Torre de copas preparada para el brindis de una celebración de Azurea"
+      />
     </div>
   </section>
 

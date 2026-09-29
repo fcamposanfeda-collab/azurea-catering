@@ -1,0 +1,22 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  position?: string;
+}
+
+const { src, alt, position = 'center' } = Astro.props;
+---
+
+<div class="split__media" data-reveal>
+  <img
+    class="split__photo"
+    src={src}
+    alt={alt}
+    width="1400"
+    height="1050"
+    loading="lazy"
+    decoding="async"
+    style={`object-position: ${position}`}
+  />
+</div>

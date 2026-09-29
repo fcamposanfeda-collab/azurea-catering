@@ -2,7 +2,7 @@
 import { brand } from '../data/brand';
 import { breadcrumbLabels, type PagePath } from '../data/pages-meta';
 import { serviceCards } from '../data/content';
-import { local } from '../data/local';
+import { local, servicePlaces } from '../data/local';
 import { contact, site } from '../data/site';
 
 interface Props {
@@ -48,7 +48,7 @@ const schema = {
       url: site.url,
       image: ogImage,
       email: contact.email,
-      telephone: contact.phoneDisplay,
+      telephone: contact.phone,
       description: site.description,
       slogan: brand.tagline,
       priceRange: '€€',
@@ -63,10 +63,29 @@ const schema = {
         latitude: local.geo.latitude,
         longitude: local.geo.longitude,
       },
-      areaServed: local.areaServed.map((name) => ({
-        '@type': 'AdministrativeArea',
-        name,
-      })),
+      areaServed: [
+        ...servicePlaces.map((place) => ({
+          '@type': 'City',
+          name: place.name,
+          containedInPlace: {
+            '@type': 'AdministrativeArea',
+            name: place.province,
+          },
+        })),
+        {
+          '@type': 'AdministrativeArea',
+          name: local.province,
+        },
+        {
+          '@type': 'GeoCircle',
+          geoMidpoint: {
+            '@type': 'GeoCoordinates',
+            latitude: local.geo.latitude,
+            longitude: local.geo.longitude,
+          },
+          geoRadius: local.geoRadiusMeters,
+        },
+      ],
       knowsAbout: [
         'Catering para bodas',
         'Catering para comuniones',
@@ -80,7 +99,7 @@ const schema = {
           '@type': 'Service',
           name: service.title,
           description: service.text,
-          areaServed: local.province,
+          areaServed: local.serviceAreaLabel,
           provider: { '@id': businessId },
         },
       })),

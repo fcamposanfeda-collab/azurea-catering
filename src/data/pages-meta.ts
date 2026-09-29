@@ -3,49 +3,49 @@ import { site } from './site';
 
 export const pagesMeta = {
   '/': {
-    title: `Catering en ${local.province} | ${site.name}`,
+    title: `Catering en ${local.city} y alrededores | ${site.name}`,
     description:
-      'Catering profesional para bodas, comuniones y eventos en la provincia de Ciudad Real. Menús personalizados, servicio cuidado y presupuesto a tu medida.',
+      'Catering en Ciudad Real y a una hora: Puertollano, Almagro, Daimiel, Manzanares y Valdepeñas. Bodas, comuniones y eventos a tu medida.',
   },
   '/servicios': {
     title: `Servicios de catering para eventos | ${site.name}`,
     description:
-      'Cócteles, menús servidos, buffets y propuestas a medida en la provincia de Ciudad Real. Bodas, comuniones, empresas y celebraciones privadas.',
+      'Cócteles, menús y buffets en Ciudad Real y alrededores, hasta una hora. Bodas, comuniones, empresas y celebraciones privadas.',
   },
   '/bodas': {
-    title: `Catering para bodas en ${local.province} | ${site.name}`,
+    title: `Catering para bodas en ${local.city} | ${site.name}`,
     description:
-      'Catering de boda con menús personalizados, cóctel de bienvenida y servicio en mesa. Acompañamiento completo en la provincia de Ciudad Real.',
+      'Catering de boda en Ciudad Real y localidades a una hora: menús, cóctel de bienvenida y servicio en mesa, adaptado a vuestro presupuesto.',
   },
   '/comuniones': {
-    title: `Catering para comuniones en ${local.province} | ${site.name}`,
+    title: `Catering de comuniones en ${local.city} | ${site.name}`,
     description:
-      'Catering para comuniones y celebraciones familiares en la provincia de Ciudad Real. Menús para adultos y niños, presentación cuidada y opciones según presupuesto.',
+      'Catering de comuniones en Ciudad Real y alrededores. Menús para adultos y niños, presentación cuidada y opciones a tu medida.',
   },
   '/eventos': {
     title: `Catering corporativo y eventos privados | ${site.name}`,
     description:
-      'Catering para empresas, cumpleaños y eventos en la provincia de Ciudad Real. Servicio flexible y profesional con propuestas adaptadas a cada ocasión.',
+      'Catering para empresas y eventos privados en Ciudad Real y a una hora. Servicio flexible, adaptado a cada ocasión y presupuesto.',
   },
   '/crea-tu-evento': {
     title: `Eventos personalizados y temáticos | ${site.name}`,
     description:
-      'Diseña tu evento con temática, decoración, comida y corners especiales. Catering creativo en la provincia de Ciudad Real para celebraciones únicas.',
+      'Eventos a medida en Ciudad Real y alrededores: temática, decoración, comida y corners. Catering creativo hasta una hora de la ciudad.',
   },
   '/luxury-experiences': {
-    title: `Luxury Travel Spain | Viajes de lujo a medida | ${site.name}`,
+    title: `Viajes de lujo en España | ${site.name}`,
     description:
-      'Bespoke luxury travel in Spain for international guests. Private arrivals, estate stays, wine tastings, coast, El Rocío and tailor-made itineraries with Azurea Luxury Experiences.',
+      'Viajes de lujo a medida por España para invitados internacionales. Llegadas privadas, fincas, vino y costa con Azurea Luxury Experiences.',
   },
   '/sobre-azurea': {
-    title: `Sobre ${site.name} | Catering en ${local.province}`,
+    title: `Sobre ${site.name} | Catering en ${local.city}`,
     description:
-      'Conoce Azurea Catering: catering personalizado para eventos en la provincia de Ciudad Real. Calidad, creatividad y atención al detalle.',
+      'Azurea Catering, en Ciudad Real. Celebraciones en la ciudad, la provincia y localidades a alrededor de una hora.',
   },
   '/contacto': {
     title: `Contacto y presupuesto | ${site.name}`,
     description:
-      'Pide presupuesto de catering para bodas, comuniones o eventos en la provincia de Ciudad Real. Teléfono, email, WhatsApp y formulario de contacto.',
+      'Presupuesto de catering en Ciudad Real y alrededores, hasta una hora. Teléfono, WhatsApp y formulario para bodas, comuniones y eventos.',
   },
   '/aviso-legal': {
     title: `Aviso legal | ${site.name}`,

@@ -573,24 +573,43 @@ h2 + .lead {
 .hero__visual {
   position: relative;
   min-height: 34rem;
+  overflow: hidden;
   border-radius: 16rem 16rem 2rem 2rem;
-  background:
-    linear-gradient(rgba(16, 47, 53, 0.24), rgba(16, 47, 53, 0.1)),
-    url('/images/optimized/azurea-salon.webp') center / cover;
+  background: #102f35;
   box-shadow: var(--shadow-card);
+}
+
+.hero__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero__shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(rgba(16, 47, 53, 0.24), rgba(16, 47, 53, 0.1));
+  pointer-events: none;
 }
 
 .hero__visual::before {
   content: '';
   position: absolute;
+  z-index: 2;
   inset: 1rem;
   border: 1px solid rgba(244, 234, 220, 0.48);
   border-radius: 15rem 15rem 1.4rem 1.4rem;
+  pointer-events: none;
 }
 
 .hero__visual::after {
   content: '';
   position: absolute;
+  z-index: 2;
   top: 1.35rem;
   right: 1.35rem;
   width: 7.4rem;
@@ -605,6 +624,7 @@ h2 + .lead {
 
 .hero__note {
   position: absolute;
+  z-index: 3;
   right: clamp(1rem, 3vw, 2rem);
   bottom: clamp(1rem, 3vw, 2rem);
   max-width: 16rem;
@@ -626,19 +646,36 @@ h2 + .lead {
   position: relative;
   min-height: 28rem;
   border-radius: var(--radius-lg);
-  background:
-    linear-gradient(rgba(16, 47, 53, 0.1), rgba(16, 47, 53, 0.1)),
-    var(--image) var(--image-position, center) / cover;
+  background: #102f35;
   box-shadow: var(--shadow-card);
   overflow: hidden;
+}
+
+.split__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.split__media::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(rgba(16, 47, 53, 0.1), rgba(16, 47, 53, 0.1));
+  pointer-events: none;
 }
 
 .split__media::after {
   content: '';
   position: absolute;
+  z-index: 2;
   inset: 1rem;
   border: 1px solid rgba(244, 234, 220, 0.44);
   border-radius: calc(var(--radius-lg) - 0.65rem);
+  pointer-events: none;
 }
 
 .feature-list {
@@ -1299,6 +1336,68 @@ h2 + .lead {
     width: 7.4rem;
     height: 5rem;
   }
+}
+
+#donde-trabajamos {
+  scroll-margin-top: var(--header-height);
+}
+
+.place-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+  max-width: 58rem;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.place-list li {
+  padding: 0.45rem 0.9rem;
+  color: var(--color-ink);
+  font-size: 1.02rem;
+  letter-spacing: 0.02em;
+  background: rgba(255, 253, 248, 0.72);
+  border: 1px solid rgba(199, 168, 106, 0.35);
+  border-radius: 999px;
+}
+
+.place-note {
+  max-width: 40rem;
+  margin: 1.25rem auto 0;
+  color: var(--color-ink-soft);
+  text-align: center;
+}
+
+.area-faq {
+  max-width: 46rem;
+  margin: 2.5rem auto 0;
+}
+
+.area-faq h3 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.area-faq details {
+  padding: 0.95rem 0;
+  border-top: 1px solid rgba(199, 168, 106, 0.28);
+}
+
+.area-faq details:last-child {
+  border-bottom: 1px solid rgba(199, 168, 106, 0.28);
+}
+
+.area-faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.area-faq details p {
+  margin: 0.75rem 0 0.2rem;
+  color: var(--color-ink-soft);
 }
 
 @media (prefers-reduced-motion: reduce) {

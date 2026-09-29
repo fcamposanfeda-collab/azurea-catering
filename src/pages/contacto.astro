@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ContactForm from '../components/forms/ContactForm.astro';
 import Button from '../components/ui/Button.astro';
 import BudgetCallout from '../components/ui/BudgetCallout.astro';
+import ServiceArea from '../components/sections/ServiceArea.astro';
 import { getPageMeta } from '../data/pages-meta';
 import { contact } from '../data/site';
 
@@ -16,7 +17,7 @@ const meta = getPageMeta('/contacto');
       <h1>Cuéntanos qué estás preparando</h1>
       <p class="lead">
         Indícanos fecha, lugar, invitados, tipo de evento y el presupuesto aproximado. Atendemos
-        celebraciones en la provincia de Ciudad Real. Con eso prepararemos opciones
+        celebraciones en Ciudad Real y a alrededor de una hora. Con eso prepararemos opciones
         adaptadas a lo que quieres invertir.
       </p>
     </div>
@@ -47,5 +48,7 @@ const meta = getPageMeta('/contacto');
       </div>
     </div>
   </section>
+
+  <ServiceArea />
 </BaseLayout>
 
