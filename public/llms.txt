@@ -1,0 +1,31 @@
+# Azurea Catering
+
+> Azurea Catering es un servicio de catering para bodas, comuniones, bautizos, eventos privados y eventos de empresa con base en Ciudad Real (Castilla-La Mancha, España). Trabaja en Ciudad Real, el resto de la provincia y localidades a alrededor de una hora en coche. Cada propuesta se diseña a partir del presupuesto del cliente.
+
+Datos clave:
+
+- Zona de servicio: Ciudad Real, Miguelturra, Poblete, Almagro, Bolaños de Calatrava, Daimiel, Malagón, Puertollano, Almodóvar del Campo, Manzanares, Membrilla, La Solana, Valdepeñas, Tomelloso, Alcázar de San Juan, Campo de Criptana y, en la provincia de Toledo, Consuegra y Madridejos.
+- Formatos: cóctel con aperitivos fríos y calientes, menú servido en mesa, buffet y estaciones gastronómicas, mesas de postres, servicio integral con montaje y coordinación, temática, decoración y corners (candy bar, vino, queso, jamón).
+- Menús adaptados: celíacos, alergias e intolerancias, vegetarianos, veganos, diabéticos e hipertensos.
+- Presupuesto: a medida; el cliente indica la inversión y Azurea propone opciones dentro de ese rango.
+- Contacto: teléfono y WhatsApp +34 635 197 898, email azureacatering@gmail.com.
+- Titular: Sabores en tu Puerta, S.L. (NIF B21780341), Carretera de Toledo, 26, oficina 304, 13005 Ciudad Real.
+
+## Servicios
+
+- [Servicios de catering](https://azureacatering.com/servicios/): formatos y tipos de evento.
+- [Catering para bodas](https://azureacatering.com/bodas/): cóctel de bienvenida, menú, servicio en mesa.
+- [Catering de comuniones](https://azureacatering.com/comuniones/): menús para adultos y niños.
+- [Eventos privados y de empresa](https://azureacatering.com/eventos/): cumpleaños, aniversarios, coffee breaks, cócteles corporativos.
+- [Crea tu evento](https://azureacatering.com/crea-tu-evento/): eventos temáticos y personalizados.
+
+## Empresa
+
+- [Sobre Azurea](https://azureacatering.com/sobre-azurea/)
+- [Contacto y presupuesto](https://azureacatering.com/contacto/)
+- [Dónde trabajamos](https://azureacatering.com/#donde-trabajamos)
+
+## Opcional
+
+- [Luxury Experiences](https://azureacatering.com/luxury-experiences/): viajes de lujo a medida por España para visitantes internacionales.
+- [Aviso legal](https://azureacatering.com/aviso-legal/)

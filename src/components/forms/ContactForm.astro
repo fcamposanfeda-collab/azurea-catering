@@ -1,4 +1,5 @@
 ---
+import PrivacyNotice from './PrivacyNotice.astro';
 import { contact } from '../../data/site';
 ---
 
@@ -35,6 +36,8 @@ import { contact } from '../../data/site';
     Cuéntanos fecha, lugar, invitados, presupuesto aproximado y estilo
     <textarea name="mensaje" rows="5" required></textarea>
   </label>
+
+  <PrivacyNotice />
 
   <p class="contact-form__status" data-form-status hidden></p>
 

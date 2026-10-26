@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getPageMeta } from '../data/pages-meta';
 import { contact, site } from '../data/site';
+import { legal, legalAddressLine } from '../data/legal';
 
 const meta = getPageMeta('/aviso-legal');
 ---
@@ -19,9 +20,15 @@ const meta = getPageMeta('/aviso-legal');
     <div class="container rich-text">
       <h2>Titularidad</h2>
       <p>
-        Este sitio web pertenece a Azurea Catering. Los datos fiscales completos del titular deberán
-        completarse antes de la publicación definitiva.
+        En cumplimiento del artículo 10 de la Ley 34/2002, de servicios de la sociedad de la información y de
+        comercio electrónico (LSSI), se informa de que este sitio web y la marca {site.name} son titularidad de:
       </p>
+      <ul>
+        <li><strong>Titular:</strong> {legal.holder}</li>
+        <li><strong>NIF:</strong> {legal.taxId}</li>
+        <li><strong>Domicilio:</strong> {legalAddressLine}</li>
+        {legal.registry && <li><strong>Registro Mercantil:</strong> {legal.registry}</li>}
+      </ul>
       <p>Contacto: <a href={`mailto:${contact.email}`}>{contact.email}</a> · <a href={`tel:${contact.phone}`}>{contact.phoneDisplay}</a>.</p>
 
       <h2>Uso del sitio web</h2>

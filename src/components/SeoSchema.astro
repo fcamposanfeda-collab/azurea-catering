@@ -4,6 +4,7 @@ import { breadcrumbLabels, type PagePath } from '../data/pages-meta';
 import { serviceCards } from '../data/content';
 import { local, servicePlaces } from '../data/local';
 import { contact, site } from '../data/site';
+import { legal } from '../data/legal';
 
 interface Props {
   pathname: string;
@@ -45,8 +46,12 @@ const schema = {
       '@id': businessId,
       name: brand.legalName,
       alternateName: brand.name,
+      legalName: legal.holder,
+      taxID: legal.taxId,
       url: site.url,
       image: ogImage,
+      logo: new URL('/icon-512.png', site.url).href,
+      sameAs: site.sameAs,
       email: contact.email,
       telephone: contact.phone,
       description: site.description,
@@ -54,6 +59,8 @@ const schema = {
       priceRange: '€€',
       address: {
         '@type': 'PostalAddress',
+        streetAddress: legal.address.street,
+        postalCode: legal.address.postalCode,
         addressLocality: local.city,
         addressRegion: local.region,
         addressCountry: local.countryCode,
@@ -92,6 +99,7 @@ const schema = {
         'Catering corporativo',
         'Eventos privados',
         'Menús personalizados',
+        'Menús para celíacos, alérgicos, vegetarianos y veganos',
       ],
       makesOffer: serviceCards.map((service) => ({
         '@type': 'Offer',
