@@ -4,7 +4,9 @@ export const site = {
   lang: 'es',
   description:
     'Catering para bodas, comuniones, eventos privados y empresas en Ciudad Real y en localidades a alrededor de una hora. Propuestas personalizadas con una puesta en escena elegante.',
-  ogImage: '/images/optimized/azurea-mesa-exterior.webp',
+  ogImage: '/images/og-azurea.jpg',
+  /** Perfiles externos de la marca, para schema `sameAs`. */
+  sameAs: ['https://www.bodas.net/catering/azurea-catering-&-eventos--e283969'],
   copyright: `© ${new Date().getFullYear()} Azurea Catering. Todos los derechos reservados.`,
 };
 

@@ -41,6 +41,8 @@ function buildMessage(data: FormData, formType: string) {
       '',
       'Idea del viaje:',
       `${data.get('mensaje') ?? ''}`,
+      '',
+      `Política de privacidad: ${data.get('privacidad') ?? 'No aceptada'}`,
     ].join('\n');
   }
 
@@ -49,6 +51,8 @@ function buildMessage(data: FormData, formType: string) {
     '',
     'Detalles:',
     `${data.get('mensaje') ?? ''}`,
+    '',
+    `Política de privacidad: ${data.get('privacidad') ?? 'No aceptada'}`,
   ].join('\n');
 }
 

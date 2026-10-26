@@ -62,4 +62,14 @@ export const serviceAreaFaqs = [
     answer:
       'Sí. Montamos bodas, comuniones, eventos de empresa y celebraciones privadas en Ciudad Real, en pueblos del entorno y en fincas o salones dentro de ese radio de alrededor de una hora.',
   },
+  {
+    question: '¿Preparáis menús para celíacos, alérgicos, vegetarianos o veganos?',
+    answer:
+      'Sí. Adaptamos el menú a invitados celíacos, con alergias o intolerancias, vegetarianos y veganos, y también a dietas para personas diabéticas o hipertensas. Indícanoslo al pedir presupuesto y lo incluimos en la propuesta.',
+  },
+  {
+    question: '¿Qué incluye el servicio de catering de Azurea?',
+    answer:
+      'Según el evento, la propuesta puede incluir el menú (cóctel, buffet o servicio en mesa), bebidas, postres, servicio de camareros, menaje, mobiliario, montaje, decoración y coordinación del día. Tú eliges qué partes necesitas según tu presupuesto.',
+  },
 ] as const;

@@ -1,4 +1,5 @@
 ---
+import PrivacyNotice from './PrivacyNotice.astro';
 import { contact } from '../../data/site';
 import { luxuryBudgetOptions, luxuryInterestOptions } from '../../data/luxury';
 ---
@@ -149,6 +150,8 @@ import { luxuryBudgetOptions, luxuryInterestOptions } from '../../data/luxury';
       </label>
     </div>
   </fieldset>
+
+  <PrivacyNotice />
 
   <p class="contact-form__status" data-form-status hidden></p>
 
