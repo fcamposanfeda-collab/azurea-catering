@@ -24,7 +24,7 @@ const meta = getPageMeta('/aviso-legal');
         comercio electrónico (LSSI), se informa de que este sitio web y la marca {site.name} son titularidad de:
       </p>
       <ul>
-        <li><strong>Titular:</strong> {legal.holder}</li>
+        <li><strong>Titular:</strong> {legal.holder}, {legal.holderNote.toLowerCase()}</li>
         <li><strong>NIF:</strong> {legal.taxId}</li>
         <li><strong>Domicilio:</strong> {legalAddressLine}</li>
         {legal.registry && <li><strong>Registro Mercantil:</strong> {legal.registry}</li>}
