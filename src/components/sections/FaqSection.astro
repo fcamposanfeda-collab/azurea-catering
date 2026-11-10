@@ -1,0 +1,43 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  items: ReadonlyArray<{ question: string; answer: string }>;
+}
+
+const { eyebrow = 'Preguntas frecuentes', title, items } = Astro.props;
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-header section-header--center" data-reveal>
+      <span class="eyebrow">{eyebrow}</span>
+      <h2>{title}</h2>
+    </div>
+    <div class="area-faq">
+      {
+        items.map((item) => (
+          <details data-reveal>
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

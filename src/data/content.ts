@@ -25,22 +25,22 @@ export const serviceCards = [
   {
     title: 'Bodas',
     text: 'Cóctel de bienvenida, menú sentado, buffet o estaciones temáticas para un día diseñado al detalle.',
-    href: '/bodas',
+    href: '/bodas/',
   },
   {
     title: 'Comuniones',
     text: 'Celebraciones familiares con propuestas para adultos y niños, dulces, salados y una estética luminosa.',
-    href: '/comuniones',
+    href: '/comuniones/',
   },
   {
     title: 'Eventos privados',
     text: 'Cumpleaños, aniversarios y encuentros especiales con un catering flexible, cercano y con personalidad.',
-    href: '/eventos',
+    href: '/eventos/',
   },
   {
     title: 'Empresas',
     text: 'Desayunos, coffee breaks, cócteles corporativos y reuniones donde la comida también comunica marca.',
-    href: '/eventos',
+    href: '/eventos/',
   },
 ];
 

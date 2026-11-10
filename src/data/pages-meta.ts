@@ -13,9 +13,9 @@ export const pagesMeta = {
       'Cócteles, menús y buffets en Ciudad Real y alrededores, hasta una hora. Bodas, comuniones, empresas y celebraciones privadas.',
   },
   '/bodas': {
-    title: `Catering para bodas en ${local.city} | ${site.name}`,
+    title: `Catering para bodas en ${local.city} y fincas | ${site.name}`,
     description:
-      'Catering de boda en Ciudad Real y localidades a una hora: menús, cóctel de bienvenida y servicio en mesa, adaptado a vuestro presupuesto.',
+      'Catering de boda en Ciudad Real, fincas y pueblos a una hora. De 30 a 500 invitados, cóctel, banquete y menús para celíacos. Presupuesto a vuestra medida.',
   },
   '/comuniones': {
     title: `Catering de comuniones en ${local.city} | ${site.name}`,
