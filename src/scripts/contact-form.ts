@@ -139,6 +139,9 @@ function initContactForms(accessKey: string) {
           await submitWithFormSubmit(data, formType);
         }
 
+        window.umami?.track('Formulario enviado', {
+          formulario: formType === 'luxury' ? 'Luxury Experiences' : String(data.get('evento') ?? ''),
+        });
         form.reset();
         showStatus(
           form,
