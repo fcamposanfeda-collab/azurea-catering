@@ -39,7 +39,7 @@ export const footerNav: NavLink[] = [
 ];
 
 export const legalNav: NavLink[] = [
-  { label: 'Aviso legal', href: '/aviso-legal' },
-  { label: 'Política de privacidad', href: '/politica-de-privacidad' },
-  { label: 'Política de cookies', href: '/politica-de-cookies' },
+  { label: 'Aviso legal', href: '/aviso-legal/' },
+  { label: 'Política de privacidad', href: '/politica-de-privacidad/' },
+  { label: 'Política de cookies', href: '/politica-de-cookies/' },
 ];
