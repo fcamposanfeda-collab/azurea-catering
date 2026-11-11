@@ -20,9 +20,10 @@ const meta = getPageMeta('/politica-de-privacidad');
     <div class="container rich-text">
       <h2>Responsable</h2>
       <ul>
-        <li><strong>Responsable:</strong> {legal.holder} ({site.name})</li>
+        <li><strong>Responsable:</strong> {legal.holder}, {legal.holderNote.toLowerCase()} ({site.name})</li>
         <li><strong>NIF:</strong> {legal.taxId}</li>
         <li><strong>Domicilio:</strong> {legalAddressLine}</li>
+        <li><strong>Registro Mercantil:</strong> {legal.registry}</li>
         <li><strong>Contacto:</strong> <a href={`mailto:${contact.email}`}>{contact.email}</a> · <a href={`tel:${contact.phone}`}>{contact.phoneDisplay}</a></li>
       </ul>
 
