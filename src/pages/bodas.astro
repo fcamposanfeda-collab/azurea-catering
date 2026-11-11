@@ -3,6 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/ui/Button.astro';
 import SplitPhoto from '../components/ui/SplitPhoto.astro';
 import BudgetCallout from '../components/ui/BudgetCallout.astro';
+import FaqSection from '../components/sections/FaqSection.astro';
+import { weddingFaqs } from '../data/faqs';
 import { getPageMeta } from '../data/pages-meta';
 import { routes } from '../data/routes';
 
@@ -12,8 +14,10 @@ const meta = getPageMeta('/bodas');
 <BaseLayout title={meta.title} description={meta.description}>
   <section class="page-hero">
     <div class="container section-header" data-reveal>
-      <span class="eyebrow">Bodas</span>
-      <h1>Un catering de boda pensado hasta el último detalle</h1>
+      <h1>
+        <span class="hero__kicker">Catering para bodas en Ciudad Real</span>
+        Un catering de boda pensado hasta el último detalle
+      </h1>
       <p class="lead">
         Una boda no es un evento más. Diseñamos una experiencia gastronómica que acompaña el día completo,
         con propuestas adaptadas al presupuesto que queráis destinar. Servimos en Ciudad Real y en
@@ -112,5 +116,7 @@ const meta = getPageMeta('/bodas');
       </div>
     </div>
   </section>
+
+  <FaqSection title="Catering de boda en Ciudad Real: lo que más nos preguntan" items={weddingFaqs} />
 </BaseLayout>
 

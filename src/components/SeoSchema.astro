@@ -13,8 +13,9 @@ interface Props {
 }
 
 const { pathname, title, description } = Astro.props;
-const pagePath = (pathname in breadcrumbLabels ? pathname : '/') as PagePath;
-const pageUrl = new URL(pagePath, site.url).href;
+const normalizedPath = pathname.length > 1 ? pathname.replace(/\/$/, '') : pathname;
+const pagePath = (normalizedPath in breadcrumbLabels ? normalizedPath : '/') as PagePath;
+const pageUrl = new URL(pagePath === '/' ? '/' : `${pagePath}/`, site.url).href;
 const businessId = `${site.url}/#business`;
 const websiteId = `${site.url}/#website`;
 const webpageId = `${pageUrl}#webpage`;

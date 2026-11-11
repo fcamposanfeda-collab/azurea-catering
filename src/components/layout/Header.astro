@@ -5,7 +5,7 @@ import { mainNav } from '../../data/navigation';
 import { routes } from '../../data/routes';
 
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
-const isActive = (href: string) => href !== '/' && currentPath.startsWith(href);
+const isActive = (href: string) => href !== '/' && currentPath.startsWith(href.replace(/\/$/, ''));
 const hasChildren = (item: (typeof mainNav)[number]): item is Extract<(typeof mainNav)[number], { children: unknown }> =>
   'children' in item;
 ---
