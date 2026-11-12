@@ -17,7 +17,8 @@ export const mainNav: NavItem[] = [
     children: [
       { label: 'Bodas', href: routes.weddings },
       { label: 'Comuniones', href: routes.communions },
-      { label: 'Eventos', href: routes.events },
+      { label: 'Empresas', href: routes.business },
+      { label: 'Celebraciones', href: routes.celebrations },
     ],
   },
   { label: 'Crea tu evento', href: routes.createEvent },
@@ -31,6 +32,8 @@ export const footerNav: NavLink[] = [
   { label: 'Bodas', href: routes.weddings },
   { label: 'Comuniones', href: routes.communions },
   { label: 'Eventos', href: routes.events },
+  { label: 'Catering para empresas', href: routes.business },
+  { label: 'Cumpleaños y celebraciones', href: routes.celebrations },
   { label: 'Crea tu evento', href: routes.createEvent },
   { label: 'Luxury Experiences', href: routes.luxury },
   { label: 'Sobre Azurea', href: routes.about },

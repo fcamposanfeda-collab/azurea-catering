@@ -12,8 +12,10 @@ const meta = getPageMeta('/eventos');
 <BaseLayout title={meta.title} description={meta.description}>
   <section class="page-hero">
     <div class="container section-header" data-reveal>
-      <span class="eyebrow">Eventos</span>
-      <h1>Catering para empresas, cumpleaños y eventos privados</h1>
+      <h1>
+        <span class="hero__kicker">Catering para eventos en Ciudad Real</span>
+        Catering para empresas, cumpleaños y eventos privados
+      </h1>
       <p class="lead">
         Desde un cóctel corporativo hasta una celebración íntima, creamos soluciones flexibles según el
         presupuesto y el tipo de evento que quieras celebrar. El servicio cubre Ciudad Real y localidades
@@ -28,9 +30,9 @@ const meta = getPageMeta('/eventos');
 
   <section class="section">
     <div class="container grid grid--3">
-      <div class="card" data-reveal><span class="card__meta">Empresas</span><h3>Eventos corporativos</h3><p>Coffee breaks, presentaciones, reuniones, inauguraciones y cócteles con una imagen cuidada.</p></div>
-      <div class="card" data-reveal><span class="card__meta">Privados</span><h3>Cumpleaños y aniversarios</h3><p>Propuestas personalizadas para celebrar en casa, finca, jardín o espacio privado.</p></div>
-      <div class="card" data-reveal><span class="card__meta">Especiales</span><h3>Celebraciones a medida</h3><p>Un formato diseñado desde cero cuando el evento pide algo diferente.</p></div>
+      <a class="card" href={routes.business} data-reveal><span class="card__meta">Empresas</span><h3>Catering para empresas</h3><p>Cenas de Navidad, coffee breaks, presentaciones, inauguraciones y cócteles con una imagen cuidada.</p></a>
+      <a class="card" href={routes.celebrations} data-reveal><span class="card__meta">Privados</span><h3>Cumpleaños y celebraciones</h3><p>Cumpleaños, aniversarios y bautizos en casa, finca, jardín o espacio privado.</p></a>
+      <a class="card" href={routes.createEvent} data-reveal><span class="card__meta">Especiales</span><h3>Celebraciones a medida</h3><p>Un formato diseñado desde cero cuando el evento pide algo diferente.</p></a>
     </div>
   </section>
 

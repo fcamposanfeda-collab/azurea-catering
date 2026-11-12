@@ -33,14 +33,14 @@ export const serviceCards = [
     href: '/comuniones/',
   },
   {
-    title: 'Eventos privados',
-    text: 'Cumpleaños, aniversarios y encuentros especiales con un catering flexible, cercano y con personalidad.',
-    href: '/eventos/',
+    title: 'Celebraciones',
+    text: 'Cumpleaños, aniversarios, bautizos y fiestas en casa o en finca con un catering flexible y cercano.',
+    href: '/celebraciones/',
   },
   {
     title: 'Empresas',
-    text: 'Desayunos, coffee breaks, cócteles corporativos y reuniones donde la comida también comunica marca.',
-    href: '/eventos/',
+    text: 'Cenas de Navidad, cócteles, inauguraciones y coffee breaks donde la comida también comunica marca.',
+    href: '/catering-empresas/',
   },
 ];
 
