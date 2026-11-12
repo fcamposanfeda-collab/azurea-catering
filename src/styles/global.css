@@ -607,7 +607,7 @@ h2 + .lead {
 }
 
 .hero__visual::after {
-  content: '';
+  content: none;
   position: absolute;
   z-index: 2;
   top: 1.35rem;
@@ -1149,52 +1149,11 @@ h2 + .lead {
   gap: 1rem;
 }
 
-.cookie-banner {
-  position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-  left: 1rem;
-  z-index: 200;
-  max-width: 58rem;
-  margin-inline: auto;
-  padding: 1rem;
-  color: var(--color-on-dark);
-  background: var(--color-ink);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-}
 
-.cookie-banner__inner,
-.cookie-banner__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  align-items: center;
-  justify-content: space-between;
-}
 
-.cookie-banner p {
-  max-width: 40rem;
-  font-size: 0.9rem;
-}
 
-.cookie-banner a {
-  color: var(--color-gold-soft);
-  text-decoration: underline;
-}
 
-.cookie-banner__btn {
-  padding: 0.55rem 0.9rem;
-  color: var(--color-on-dark);
-  background: transparent;
-  border: 1px solid rgba(255, 248, 236, 0.36);
-  border-radius: var(--radius-full);
-}
 
-.cookie-banner__btn--primary {
-  color: var(--color-ink);
-  background: var(--color-gold-soft);
-}
 
 .skip-link {
   position: absolute;
@@ -1458,4 +1417,119 @@ h2 + .lead {
   font-weight: 600;
   letter-spacing: 0.18em;
   line-height: 1.3;
+}
+
+.review-card {
+  display: grid;
+  gap: 0.9rem;
+  align-content: start;
+  margin: 0;
+  padding: 1.5rem;
+  background: var(--color-cream-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.review-card__stars {
+  color: #9a7a35;
+  letter-spacing: 0.15em;
+}
+
+.review-card blockquote {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  line-height: 1.35;
+}
+
+.review-card figcaption {
+  color: var(--color-ink-soft);
+  font-size: 0.95rem;
+}
+
+.reviews__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.reviews__source {
+  color: var(--color-ink);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.reviews__actions .btn {
+  white-space: normal;
+}
+
+.whatsapp-fab {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 150;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.8rem;
+  color: #fff;
+  background: #1f8f4d;
+  border-radius: var(--radius-full);
+  box-shadow: 0 12px 30px rgba(16, 47, 53, 0.3);
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-fab:hover,
+.whatsapp-fab:focus-visible {
+  transform: translateY(-2px);
+}
+
+.whatsapp-fab__label {
+  display: none;
+  padding-right: 0.35rem;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .whatsapp-fab {
+    right: 1.5rem;
+    bottom: 1.5rem;
+    padding: 0.8rem 1.1rem;
+  }
+
+  .whatsapp-fab__label {
+    display: inline;
+  }
+}
+
+@media (max-width: 1079px) {
+  .hero__layout {
+    gap: 0;
+  }
+
+  .hero__visual {
+    order: -1;
+    min-height: 15rem;
+    margin-top: 1.25rem;
+    border-radius: 10rem 10rem 1.5rem 1.5rem;
+  }
+
+  .hero__visual::before {
+    border-radius: 9rem 9rem 1rem 1rem;
+  }
+
+  .hero__note,
+  .hero__brand-badge {
+    display: none;
+  }
+
+  .hero__content {
+    padding-block: 2rem 3rem;
+  }
 }

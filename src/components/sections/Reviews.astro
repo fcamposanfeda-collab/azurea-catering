@@ -1,0 +1,41 @@
+---
+import { googleReviewUrl, reviews, reviewsSource } from '../../data/reviews';
+---
+
+<section class="section" aria-labelledby="opiniones-title">
+  <div class="container">
+    <div class="section-header section-header--center" data-reveal>
+      <span class="eyebrow">Opiniones</span>
+      <h2 id="opiniones-title">Lo que dicen quienes ya lo han celebrado con nosotros</h2>
+      <p class="lead">
+        <strong>{reviewsSource.rating} de 5</strong> en {reviewsSource.name}, con {reviewsSource.count} opiniones
+        de bodas y comuniones.
+      </p>
+    </div>
+    <div class="grid grid--4">
+      {
+        reviews.map((review) => (
+          <figure class="review-card" data-reveal>
+            <span class="review-card__stars" aria-label="5 de 5 estrellas">★★★★★</span>
+            <blockquote>«{review.title}»</blockquote>
+            <figcaption>
+              <strong>{review.name}</strong> · {review.event}, {review.date}
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div>
+    <div class="reviews__actions" data-reveal>
+      <a href={reviewsSource.url} class="reviews__source" rel="noopener" target="_blank">Leer las opiniones completas en {reviewsSource.name}</a>
+      <a
+        href={googleReviewUrl}
+        class="btn btn--outline btn--md"
+        rel="noopener"
+        target="_blank"
+        data-umami-event="Clic reseña Google"
+      >
+        ¿Ya celebraste con nosotros? Déjanos tu reseña en Google
+      </a>
+    </div>
+  </div>
+</section>

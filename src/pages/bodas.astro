@@ -4,6 +4,7 @@ import Button from '../components/ui/Button.astro';
 import SplitPhoto from '../components/ui/SplitPhoto.astro';
 import BudgetCallout from '../components/ui/BudgetCallout.astro';
 import FaqSection from '../components/sections/FaqSection.astro';
+import Reviews from '../components/sections/Reviews.astro';
 import { weddingFaqs } from '../data/faqs';
 import { getPageMeta } from '../data/pages-meta';
 import { routes } from '../data/routes';
@@ -116,6 +117,8 @@ const meta = getPageMeta('/bodas');
       </div>
     </div>
   </section>
+
+  <Reviews />
 
   <FaqSection title="Catering de boda en Ciudad Real: lo que más nos preguntan" items={weddingFaqs} />
 </BaseLayout>

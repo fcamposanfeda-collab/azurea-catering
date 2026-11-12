@@ -4,6 +4,7 @@ import Button from '../components/ui/Button.astro';
 import ContactForm from '../components/forms/ContactForm.astro';
 import BudgetSection from '../components/sections/BudgetSection.astro';
 import ServiceArea from '../components/sections/ServiceArea.astro';
+import Reviews from '../components/sections/Reviews.astro';
 import { getPageMeta } from '../data/pages-meta';
 import { routes } from '../data/routes';
 import { contact } from '../data/site';
@@ -91,6 +92,8 @@ const meta = getPageMeta('/');
       </div>
     </div>
   </section>
+
+  <Reviews />
 
   <ServiceArea faq />
 
