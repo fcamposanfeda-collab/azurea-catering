@@ -1,5 +1,5 @@
 ---
-import { reviews, reviewsSource } from '../../data/reviews';
+import { googleReviewUrl, reviews, reviewsSource } from '../../data/reviews';
 ---
 
 <section class="section" aria-labelledby="opiniones-title">
@@ -25,8 +25,17 @@ import { reviews, reviewsSource } from '../../data/reviews';
         ))
       }
     </div>
-    <p class="reviews__source" data-reveal>
-      <a href={reviewsSource.url} rel="noopener" target="_blank">Leer las opiniones completas en {reviewsSource.name}</a>
-    </p>
+    <div class="reviews__actions" data-reveal>
+      <a href={reviewsSource.url} class="reviews__source" rel="noopener" target="_blank">Leer las opiniones completas en {reviewsSource.name}</a>
+      <a
+        href={googleReviewUrl}
+        class="btn btn--outline btn--md"
+        rel="noopener"
+        target="_blank"
+        data-umami-event="Clic reseña Google"
+      >
+        ¿Ya celebraste con nosotros? Déjanos tu reseña en Google
+      </a>
+    </div>
   </div>
 </section>

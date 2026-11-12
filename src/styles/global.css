@@ -1448,15 +1448,24 @@ h2 + .lead {
   font-size: 0.95rem;
 }
 
-.reviews__source {
+.reviews__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem 2rem;
   margin-top: 2rem;
   text-align: center;
 }
 
-.reviews__source a {
+.reviews__source {
   color: var(--color-ink);
   font-weight: 700;
   text-decoration: underline;
+}
+
+.reviews__actions .btn {
+  white-space: normal;
 }
 
 .whatsapp-fab {

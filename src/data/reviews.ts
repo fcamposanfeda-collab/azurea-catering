@@ -6,6 +6,9 @@ export const reviewsSource = {
   count: 5,
 };
 
+/** Enlace para dejar una reseña en el perfil de Google (facilitado por el titular desde Google Business Profile). */
+export const googleReviewUrl = 'https://share.google/S17M0XNJqaFKnoeoz';
+
 export const reviews = [
   { name: 'Adriana', date: 'noviembre 2026', event: 'Boda', title: 'Gastronomía inolvidable y un servicio impecable en nuestra boda.' },
   { name: 'Belén', date: 'octubre 2026', event: 'Boda', title: 'Nuestra especial boda' },
