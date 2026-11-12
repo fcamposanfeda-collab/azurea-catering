@@ -1,135 +1,135 @@
 export const galleryImages = [
   {
     "src": "/images/optimized/gallery/azurea-10.webp",
-    "alt": "Celebración Azurea Catering 10",
+    "alt": "Brindis con champán servido por el equipo de Azurea en el jardín",
     "wide": true,
     "position": "center 32%"
   },
   {
     "src": "/images/optimized/gallery/azurea-02.webp",
-    "alt": "Celebración Azurea Catering 2",
+    "alt": "Carrito dorado con copas preparadas para el brindis en el jardín",
     "wide": false
   },
   {
     "src": "/images/optimized/gallery/azurea-03.webp",
-    "alt": "Celebración Azurea Catering 3",
+    "alt": "Tabla de quesos curados con uvas y pasas en el corner de quesos",
     "wide": false
   },
   {
     "src": "/images/optimized/gallery/azurea-04.webp",
-    "alt": "Celebración Azurea Catering 4",
+    "alt": "Quesos en láminas y uvas sobre tabla de madera",
     "wide": false
   },
   {
     "src": "/images/optimized/gallery/azurea-05.webp",
-    "alt": "Celebración Azurea Catering 5",
+    "alt": "Expositor de bambú con quesos y arándanos",
     "wide": false
   },
   {
     "src": "/images/optimized/gallery/azurea-06.webp",
-    "alt": "Celebración Azurea Catering 6",
+    "alt": "Fachada de una finca de bodas con jardín y fuente",
     "wide": true
   },
   {
     "src": "/images/optimized/gallery/azurea-07.webp",
-    "alt": "Celebración Azurea Catering 7",
+    "alt": "Dados de queso con pasas sobre plato de cristal azul",
     "wide": false
   },
   {
     "src": "/images/optimized/gallery/azurea-08.webp",
-    "alt": "Celebración Azurea Catering 8",
+    "alt": "Invitados de una boda en el jardín de la finca durante el cóctel",
     "wide": true
   },
   {
     "src": "/images/optimized/gallery/azurea-09.webp",
-    "alt": "Celebración Azurea Catering 9",
+    "alt": "Camarero de Azurea sirviendo champán en copas",
     "wide": false
   },
   {
     "src": "/images/optimized/gallery/azurea-01.webp",
-    "alt": "Celebración Azurea Catering 1",
+    "alt": "Banderillas de aceitunas rellenas con queso y tomate seco",
     "wide": false
   },
   {
     "src": "/images/optimized/gallery/azurea-11.webp",
-    "alt": "Celebración Azurea Catering 11",
+    "alt": "Aperitivo de tartar en cucharas negras con crujiente",
     "wide": true
   },
   {
     "src": "/images/optimized/gallery/azurea-12.webp",
-    "alt": "Celebración Azurea Catering 12",
+    "alt": "Rincón de vino de Jerez con barril y chaquetilla roja",
     "wide": false
   },
   {
     "src": "/images/optimized/gallery/azurea-13.webp",
-    "alt": "Celebración Azurea Catering 13",
+    "alt": "Bandeja de mini wraps rellenos de carne guisada",
     "wide": false
   },
   {
     "src": "/images/optimized/gallery/azurea-14.webp",
-    "alt": "Celebración Azurea Catering 14",
+    "alt": "Camarero de Azurea con una bandeja de mini wraps",
     "wide": false
   },
   {
     "src": "/images/optimized/gallery/azurea-15.webp",
-    "alt": "Celebración Azurea Catering 15",
+    "alt": "Salón de banquete con mesas redondas, sillas de bambú y centros verdes",
     "wide": true
   },
   {
     "src": "/images/optimized/gallery/azurea-16.webp",
-    "alt": "Celebración Azurea Catering 16",
+    "alt": "Rincón del vermut con naranjas y cajas de madera",
     "wide": true
   },
   {
     "src": "/images/optimized/gallery/azurea-17.webp",
-    "alt": "Celebración Azurea Catering 17",
+    "alt": "Aperitivo emplatado con reducción sobre plato iridiscente",
     "wide": false
   },
   {
     "src": "/images/optimized/gallery/azurea-18.webp",
-    "alt": "Celebración Azurea Catering 18",
+    "alt": "Mesa de aperitivos con mantel de Azurea junto a una vidriera",
     "wide": false
   },
   {
     "src": "/images/optimized/gallery/azurea-19.webp",
-    "alt": "Celebración Azurea Catering 19",
+    "alt": "Carro de madera con barra de aperitivos en el jardín",
     "wide": false,
     "position": "center 85%"
   },
   {
     "src": "/images/optimized/gallery/azurea-20.webp",
-    "alt": "Celebración Azurea Catering 20",
+    "alt": "Mantel con el logo de Azurea sobre un coche antiguo",
     "wide": false
   },
   {
     "src": "/images/optimized/gallery/azurea-21.webp",
-    "alt": "Celebración Azurea Catering 21",
+    "alt": "Delantal bordado con el logo de Azurea",
     "wide": true
   },
   {
     "src": "/images/optimized/gallery/azurea-22.webp",
-    "alt": "Celebración Azurea Catering 22",
+    "alt": "Carro de aperitivos de Azurea en el jardín de una boda",
     "wide": true
   },
   {
     "src": "/images/optimized/gallery/azurea-23.webp",
-    "alt": "Celebración Azurea Catering 23",
+    "alt": "Mesa de quesos y aperitivos de Azurea junto a una vidriera",
     "wide": false
   },
   {
     "src": "/images/optimized/gallery/azurea-24.webp",
-    "alt": "Celebración Azurea Catering 24",
+    "alt": "Barra de aperitivos sobre carro antiguo en el jardín",
     "wide": false,
     "position": "center 88%"
   },
   {
     "src": "/images/optimized/gallery/azurea-25.webp",
-    "alt": "Celebración Azurea Catering 25",
+    "alt": "Copas de vino tinto servidas por el equipo de Azurea",
     "wide": false
   },
   {
     "src": "/images/optimized/gallery/azurea-26.webp",
-    "alt": "Celebración Azurea Catering 26",
+    "alt": "Chupitos de crema fría servidos por un camarero de Azurea",
     "wide": true,
     "position": "center 48%"
   }
