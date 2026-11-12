@@ -26,3 +26,59 @@ export const weddingFaqs = [
       'Sí. Preparamos platos para invitados celíacos, con alergias o intolerancias, vegetarianos, veganos y niños. Solo tenéis que indicarlo al confirmar el número de invitados.',
   },
 ] as const;
+
+export const businessFaqs = [
+  {
+    question: '¿Qué tipo de eventos de empresa atendéis en Ciudad Real?',
+    answer:
+      'Comidas y cenas de empresa, cenas de Navidad, cócteles de inauguración, presentaciones de producto, jornadas y reuniones con coffee break, aniversarios de empresa y eventos con clientes. Servimos en oficinas, naves, hoteles, fincas y espacios singulares de Ciudad Real y de localidades a alrededor de una hora.',
+  },
+  {
+    question: '¿Hacéis comidas y cenas de Navidad de empresa?',
+    answer:
+      'Sí. Preparamos cóctel, menú servido en mesa o formato mixto para comidas y cenas de Navidad, en vuestras instalaciones o en el espacio que elijáis. Diciembre es el mes con más demanda, así que conviene reservar la fecha cuanto antes.',
+  },
+  {
+    question: '¿Cómo se calcula el presupuesto de un catering de empresa?',
+    answer:
+      'Partimos del presupuesto que la empresa quiere destinar, del número de asistentes y del formato. Con esos datos os enviamos una propuesta detallada por escrito con menú, servicio y montaje, para que podáis aprobarla internamente sin sorpresas.',
+  },
+  {
+    question: '¿Emitís factura a nombre de la empresa?',
+    answer:
+      'Sí. Facturamos a nombre de la empresa con todos los datos fiscales necesarios.',
+  },
+  {
+    question: '¿Adaptáis el menú a alergias, intolerancias y dietas especiales?',
+    answer:
+      'Sí. Preparamos opciones para celíacos, personas con alergias o intolerancias, vegetarianos y veganos. Basta con indicarlo al confirmar el número de asistentes.',
+  },
+] as const;
+
+export const celebrationFaqs = [
+  {
+    question: '¿Hacéis catering para cumpleaños y fiestas en casa en Ciudad Real?',
+    answer:
+      'Sí. Llevamos el catering a casas, jardines, fincas y salones de Ciudad Real y de localidades a alrededor de una hora, como Miguelturra, Almagro, Daimiel, Puertollano, Manzanares o Valdepeñas.',
+  },
+  {
+    question: '¿Qué celebraciones privadas atendéis?',
+    answer:
+      'Cumpleaños, aniversarios y bodas de plata u oro, bautizos, jubilaciones, despedidas, reuniones familiares y cualquier fiesta privada que necesite un catering cuidado.',
+  },
+  {
+    question: '¿Cuánto cuesta un catering para una celebración privada?',
+    answer:
+      'Depende del número de invitados, del formato (cóctel, barra de aperitivos, menú en mesa o mesa dulce) y del servicio que incluyáis. Nos decís cuánto queréis invertir y os preparamos opciones reales dentro de ese presupuesto.',
+  },
+  {
+    question: '¿Podéis encargaros también de camareros, menaje y montaje?',
+    answer:
+      'Sí. Según lo que necesitéis, incluimos camareros, menaje, mobiliario, montaje y recogida, además de decoración y corners como mesa dulce o barra de aperitivos.',
+  },
+  {
+    question: '¿Adaptáis el menú a niños, celíacos y alergias?',
+    answer:
+      'Sí. Preparamos opciones infantiles y platos para celíacos, alergias e intolerancias, vegetarianos y veganos.',
+  },
+] as const;

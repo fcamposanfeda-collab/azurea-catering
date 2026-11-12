@@ -16,7 +16,9 @@ Datos clave:
 - [Servicios de catering](https://azureacatering.com/servicios/): formatos y tipos de evento.
 - [Catering para bodas](https://azureacatering.com/bodas/): cóctel de bienvenida, menú, servicio en mesa.
 - [Catering de comuniones](https://azureacatering.com/comuniones/): menús para adultos y niños.
-- [Eventos privados y de empresa](https://azureacatering.com/eventos/): cumpleaños, aniversarios, coffee breaks, cócteles corporativos.
+- [Catering para empresas](https://azureacatering.com/catering-empresas/): comidas y cenas de Navidad, cócteles, inauguraciones, presentaciones, jornadas y coffee breaks; propuesta por escrito y factura a empresa.
+- [Catering para cumpleaños y celebraciones](https://azureacatering.com/celebraciones/): cumpleaños, aniversarios, bautizos, jubilaciones y fiestas en casa, jardín o finca.
+- [Eventos](https://azureacatering.com/eventos/): resumen de eventos de empresa y privados.
 - [Crea tu evento](https://azureacatering.com/crea-tu-evento/): eventos temáticos y personalizados.
 
 ## Empresa

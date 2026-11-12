@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/ui/Button.astro';
+import SplitPhoto from '../components/ui/SplitPhoto.astro';
+import BudgetCallout from '../components/ui/BudgetCallout.astro';
+import FaqSection from '../components/sections/FaqSection.astro';
+import Reviews from '../components/sections/Reviews.astro';
+import { celebrationFaqs } from '../data/faqs';
+import { getPageMeta } from '../data/pages-meta';
+import { routes } from '../data/routes';
+
+const meta = getPageMeta('/celebraciones');
+---
+
+<BaseLayout title={meta.title} description={meta.description}>
+  <section class="page-hero">
+    <div class="container section-header" data-reveal>
+      <h1>
+        <span class="hero__kicker">Catering para cumpleaños y celebraciones en Ciudad Real</span>
+        Tu fiesta en casa o en finca, sin preocupaciones
+      </h1>
+      <p class="lead">
+        Cumpleaños, aniversarios, bautizos o una reunión familiar: llevamos la comida, el servicio y el montaje
+        allí donde lo celebres, en Ciudad Real y en localidades a alrededor de una hora.
+      </p>
+      <BudgetCallout />
+      <div class="cta-actions">
+        <Button href={routes.contact} size="lg">Pedir presupuesto</Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div data-reveal>
+        <span class="eyebrow">A tu manera</span>
+        <h2>Un catering que se adapta a tu fiesta, no al revés</h2>
+        <p class="lead">
+          Diseñamos el formato según el número de invitados, el espacio y el ambiente que buscas: desde un
+          aperitivo informal en el jardín hasta una comida servida en mesa.
+        </p>
+        <ul class="feature-list">
+          <li>Cóctel con aperitivos fríos y calientes.</li>
+          <li>Barra de aperitivos, encurtidos y bebidas frías.</li>
+          <li>Menú servido en mesa o estaciones gastronómicas.</li>
+          <li>Mesa dulce, tarta y detalles para el final de la fiesta.</li>
+        </ul>
+      </div>
+      <SplitPhoto
+        src="/images/optimized/azurea-barra-aperitivos.webp"
+        alt="Invitado tomando una banderilla en la barra de aperitivos de una celebración de Azurea"
+      />
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="container">
+      <div class="section-header section-header--center" data-reveal>
+        <span class="eyebrow">Celebraciones privadas</span>
+        <h2>Cada motivo merece su propio menú</h2>
+      </div>
+      <div class="grid grid--3">
+        <div class="card" data-reveal>
+          <span class="card__meta">Cumpleaños</span>
+          <h3>Cumpleaños y fiestas en casa</h3>
+          <p>De los 18 a los 80: cumpleaños redondos, fiestas sorpresa y celebraciones en casa o en el jardín.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="card__meta">Aniversarios</span>
+          <h3>Aniversarios y bodas de plata u oro</h3>
+          <p>Una comida o un cóctel especial para celebrar años juntos con la familia y los amigos.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="card__meta">Familia</span>
+          <h3>Bautizos y reuniones familiares</h3>
+          <p>Menús pensados para mayores y pequeños, con un servicio tranquilo y cercano.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="card__meta">Despedidas</span>
+          <h3>Jubilaciones y despedidas</h3>
+          <p>Un buen aperitivo y un brindis para cerrar una etapa como se merece.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="card__meta">Al aire libre</span>
+          <h3>Fiestas en fincas y jardines</h3>
+          <p>Montaje completo en exteriores, con mobiliario, menaje y camareros si lo necesitas.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="card__meta">Con temática</span>
+          <h3>Fiestas temáticas</h3>
+          <p>Si tienes una idea diferente, la diseñamos contigo en <a href={routes.createEvent}>Crea tu evento</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="photo-trio">
+        <figure data-reveal>
+          <img src="/images/optimized/azurea-brochetas-salmon.webp" alt="Brochetas de salmón marinado con salsa y sésamo" width="1400" height="1050" loading="lazy" decoding="async" />
+        </figure>
+        <figure data-reveal>
+          <img src="/images/optimized/azurea-chupitos-crema.webp" alt="Chupitos de crema fría servidos por un camarero de Azurea" width="1400" height="1050" loading="lazy" decoding="async" />
+        </figure>
+        <figure data-reveal>
+          <img src="/images/optimized/azurea-macarons.webp" alt="Macarons de naranja y chocolate en expositores dorados" width="1400" height="1050" loading="lazy" decoding="async" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <Reviews />
+
+  <FaqSection title="Preguntas frecuentes sobre catering para celebraciones" items={celebrationFaqs} />
+
+  <section class="section section--cream">
+    <div class="container section-header section-header--center" data-reveal>
+      <h2>¿Qué celebras y cuándo?</h2>
+      <p class="lead">Cuéntanos el motivo, la fecha, el lugar y cuántos seréis, y te preparamos una propuesta a tu medida.</p>
+      <div class="cta-actions cta-actions--center">
+        <Button href={routes.contact} size="lg">Pedir presupuesto</Button>
+        <Button href={routes.business} variant="outline" size="lg">Catering para empresas</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/ui/Button.astro';
+import SplitPhoto from '../components/ui/SplitPhoto.astro';
+import BudgetCallout from '../components/ui/BudgetCallout.astro';
+import FaqSection from '../components/sections/FaqSection.astro';
+import { businessFaqs } from '../data/faqs';
+import { getPageMeta } from '../data/pages-meta';
+import { routes } from '../data/routes';
+
+const meta = getPageMeta('/catering-empresas');
+---
+
+<BaseLayout title={meta.title} description={meta.description}>
+  <section class="page-hero">
+    <div class="container section-header" data-reveal>
+      <h1>
+        <span class="hero__kicker">Catering para empresas en Ciudad Real</span>
+        Eventos de empresa a la altura de tu marca
+      </h1>
+      <p class="lead">
+        Organizamos el catering de comidas y cenas de empresa, inauguraciones, presentaciones y jornadas de
+        trabajo en Ciudad Real y en localidades a alrededor de una hora. Una propuesta clara, un equipo
+        profesional y un servicio que cuida la imagen de tu empresa ante equipo y clientes.
+      </p>
+      <BudgetCallout />
+      <div class="cta-actions">
+        <Button href={routes.contact} size="lg">Pedir presupuesto para empresa</Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <SplitPhoto
+        src="/images/optimized/azurea-equipo-camareros.webp"
+        alt="Equipo de camareros de Azurea con bandejas de vino en la entrada de un evento"
+      />
+      <div data-reveal>
+        <span class="eyebrow">Servicio profesional</span>
+        <h2>Un equipo uniformado que representa a tu empresa</h2>
+        <p class="lead">
+          En un evento de empresa, el catering también comunica. Por eso cuidamos la presentación, los tiempos
+          y el trato con cada invitado, para que la atención esté en tu marca y en tu mensaje.
+        </p>
+        <ul class="feature-list">
+          <li>Propuesta detallada por escrito, fácil de aprobar internamente.</li>
+          <li>Montaje, servicio y recogida sin interrumpir la actividad.</li>
+          <li>Opciones para alergias, intolerancias y dietas especiales.</li>
+          <li>Factura a nombre de la empresa.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="container">
+      <div class="section-header section-header--center" data-reveal>
+        <span class="eyebrow">Eventos de empresa</span>
+        <h2>Catering para cada ocasión de tu empresa</h2>
+      </div>
+      <div class="grid grid--3">
+        <div class="card" data-reveal>
+          <span class="card__meta">Temporada</span>
+          <h3>Comidas y cenas de Navidad</h3>
+          <p>Cóctel, menú en mesa o formato mixto para celebrar el año con tu equipo, en vuestras instalaciones o en el espacio que elijáis.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="card__meta">Marca</span>
+          <h3>Inauguraciones y presentaciones</h3>
+          <p>Cócteles de pie con aperitivos fríos y calientes para presentar un producto, abrir un local o recibir a clientes.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="card__meta">Trabajo</span>
+          <h3>Jornadas, reuniones y coffee breaks</h3>
+          <p>Desayunos, pausas de café y almuerzos ágiles para formaciones, juntas y jornadas de trabajo.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="card__meta">Equipo</span>
+          <h3>Comidas de empresa</h3>
+          <p>Celebraciones de equipo, aniversarios de empresa, jubilaciones y despedidas con un menú a medida.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="card__meta">Clientes</span>
+          <h3>Eventos con clientes y proveedores</h3>
+          <p>Encuentros, catas y recepciones donde cada detalle refuerza la relación con quien te importa.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="card__meta">A medida</span>
+          <h3>Formatos especiales</h3>
+          <p>Estaciones gastronómicas, corners de vino o jamón y mesas dulces para eventos que quieren sorprender.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="photo-trio">
+        <figure data-reveal>
+          <img src="/images/optimized/azurea-champan-brindis.webp" alt="Camarero de Azurea sirviendo champán en copas durante un cóctel" width="1400" height="1050" loading="lazy" decoding="async" />
+        </figure>
+        <figure data-reveal>
+          <img src="/images/optimized/azurea-bandeja-servicio.webp" alt="Bandeja de aperitivos servida por un camarero de Azurea" width="1400" height="1050" loading="lazy" decoding="async" />
+        </figure>
+        <figure data-reveal>
+          <img src="/images/optimized/azurea-macarons.webp" alt="Macarons de naranja y chocolate en expositores dorados para un evento de empresa" width="1400" height="1050" loading="lazy" decoding="async" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-header section-header--center" data-reveal>
+        <span class="eyebrow">Cómo trabajamos</span>
+        <h2>De la consulta al evento, en cuatro pasos</h2>
+      </div>
+      <div class="grid grid--4">
+        <div class="card card--dark" data-reveal><h3>1. Briefing</h3><p>Nos contáis fecha, asistentes, espacio, objetivo del evento y presupuesto.</p></div>
+        <div class="card card--dark" data-reveal><h3>2. Propuesta</h3><p>Recibís una propuesta por escrito con menú, formato, servicio y precio.</p></div>
+        <div class="card card--dark" data-reveal><h3>3. Ajustes</h3><p>Afinamos detalles, horarios y necesidades especiales de los asistentes.</p></div>
+        <div class="card card--dark" data-reveal><h3>4. Evento</h3><p>Montamos, servimos y recogemos para que vosotros solo os ocupéis de vuestros invitados.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection title="Preguntas frecuentes sobre catering para empresas" items={businessFaqs} />
+
+  <section class="section section--cream">
+    <div class="container section-header section-header--center" data-reveal>
+      <h2>¿Preparamos el próximo evento de tu empresa?</h2>
+      <p class="lead">Cuéntanos fecha, número de asistentes y presupuesto, y te enviamos una propuesta a medida.</p>
+      <div class="cta-actions cta-actions--center">
+        <Button href={routes.contact} size="lg">Pedir presupuesto</Button>
+        <Button href={routes.celebrations} variant="outline" size="lg">Celebraciones privadas</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

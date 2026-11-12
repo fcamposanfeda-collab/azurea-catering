@@ -23,9 +23,19 @@ export const pagesMeta = {
       'Catering de comuniones en Ciudad Real y alrededores. Menús para adultos y niños, presentación cuidada y opciones a tu medida.',
   },
   '/eventos': {
-    title: `Catering corporativo y eventos privados | ${site.name}`,
+    title: `Catering para eventos en ${local.city} | ${site.name}`,
     description:
-      'Catering para empresas y eventos privados en Ciudad Real y a una hora. Servicio flexible, adaptado a cada ocasión y presupuesto.',
+      'Catering para eventos de empresa y celebraciones privadas en Ciudad Real y a una hora. Cócteles, menús y servicio adaptados a tu presupuesto.',
+  },
+  '/catering-empresas': {
+    title: `Catering para empresas en ${local.city} | ${site.name}`,
+    description:
+      'Catering de empresa en Ciudad Real y a una hora: cenas de Navidad, cócteles, inauguraciones y coffee breaks. Propuesta por escrito y factura a empresa.',
+  },
+  '/celebraciones': {
+    title: `Catering para cumpleaños y fiestas en ${local.city} | ${site.name}`,
+    description:
+      'Catering para cumpleaños, aniversarios, bautizos y fiestas en casa o en finca en Ciudad Real y a una hora. Menú, camareros y montaje a tu medida.',
   },
   '/crea-tu-evento': {
     title: `Eventos personalizados y temáticos | ${site.name}`,
@@ -68,7 +78,9 @@ export const breadcrumbLabels: Record<PagePath, string> = {
   '/servicios': 'Servicios',
   '/bodas': 'Catering para bodas',
   '/comuniones': 'Catering para comuniones',
-  '/eventos': 'Eventos y empresas',
+  '/eventos': 'Eventos',
+  '/catering-empresas': 'Catering para empresas',
+  '/celebraciones': 'Catering para celebraciones',
   '/crea-tu-evento': 'Crea tu evento',
   '/luxury-experiences': 'Luxury Experiences',
   '/sobre-azurea': 'Sobre Azurea',
