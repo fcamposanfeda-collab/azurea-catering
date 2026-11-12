@@ -1565,3 +1565,14 @@ h2 + .lead {
     grid-template-columns: 1fr;
   }
 }
+
+.venue-card .venue-card__guests {
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.venue-card a {
+  color: var(--color-ink);
+  font-weight: 700;
+  text-decoration: underline;
+}

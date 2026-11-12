@@ -30,6 +30,7 @@ export const footerNav: NavLink[] = [
   { label: 'Inicio', href: routes.home },
   { label: 'Servicios', href: routes.services },
   { label: 'Bodas', href: routes.weddings },
+  { label: 'Fincas con catering libre', href: routes.venues },
   { label: 'Comuniones', href: routes.communions },
   { label: 'Eventos', href: routes.events },
   { label: 'Catering para empresas', href: routes.business },

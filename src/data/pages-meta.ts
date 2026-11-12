@@ -37,6 +37,11 @@ export const pagesMeta = {
     description:
       'Catering para cumpleaños, aniversarios, bautizos y fiestas en casa o en finca en Ciudad Real y a una hora. Menú, camareros y montaje a tu medida.',
   },
+  '/fincas-bodas-ciudad-real': {
+    title: `Fincas para bodas con catering libre en Ciudad Real | ${site.name}`,
+    description:
+      'Fincas para bodas en Ciudad Real y a menos de una hora que permiten catering externo: municipio, capacidad y condiciones de catering de cada una.',
+  },
   '/crea-tu-evento': {
     title: `Eventos personalizados y temáticos | ${site.name}`,
     description:
@@ -81,6 +86,7 @@ export const breadcrumbLabels: Record<PagePath, string> = {
   '/eventos': 'Eventos',
   '/catering-empresas': 'Catering para empresas',
   '/celebraciones': 'Catering para celebraciones',
+  '/fincas-bodas-ciudad-real': 'Fincas con catering libre',
   '/crea-tu-evento': 'Crea tu evento',
   '/luxury-experiences': 'Luxury Experiences',
   '/sobre-azurea': 'Sobre Azurea',
