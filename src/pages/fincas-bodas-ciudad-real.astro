@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/ui/Button.astro';
+import SplitPhoto from '../components/ui/SplitPhoto.astro';
+import FaqSection from '../components/sections/FaqSection.astro';
+import { venueFaqs } from '../data/faqs';
+import { venues, venuesCheckedAt } from '../data/venues';
+import { getPageMeta } from '../data/pages-meta';
+import { routes } from '../data/routes';
+
+const meta = getPageMeta('/fincas-bodas-ciudad-real');
+---
+
+<BaseLayout title={meta.title} description={meta.description}>
+  <section class="page-hero">
+    <div class="container section-header" data-reveal>
+      <h1>
+        <span class="hero__kicker">Guía de fincas para bodas en Ciudad Real</span>
+        Fincas con catering libre cerca de Ciudad Real
+      </h1>
+      <p class="lead">
+        Si queréis elegir vosotros el catering de vuestra boda, necesitáis una finca que lo permita. Hemos
+        reunido {venues.length} fincas de la provincia que, según lo que publican, admiten catering externo.
+      </p>
+      <div class="cta-actions">
+        <Button href={routes.contact} size="lg">Pedir presupuesto de catering</Button>
+        <Button href={routes.weddings} variant="outline" size="lg">Nuestro catering de boda</Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div data-reveal>
+        <span class="eyebrow">Por qué catering libre</span>
+        <h2>Elegir finca y catering por separado</h2>
+        <p class="lead">
+          Cuando la finca no impone su catering, podéis comparar menús, ajustar el presupuesto y elegir el
+          estilo de cocina y de servicio que de verdad queréis para vuestra boda.
+        </p>
+        <ul class="feature-list">
+          <li>Libertad para elegir menú, formato y precio.</li>
+          <li>Un catering que se adapta a la finca, no al revés.</li>
+          <li>Más margen para corners, mesa dulce y detalles.</li>
+        </ul>
+      </div>
+      <SplitPhoto
+        src="/images/optimized/azurea-equipo-camareros.webp"
+        alt="Equipo de camareros de Azurea con bandejas de vino en la entrada de una finca"
+      />
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="container">
+      <div class="section-header section-header--center" data-reveal>
+        <span class="eyebrow">Fincas</span>
+        <h2>Fincas para bodas que permiten catering externo</h2>
+        <p class="lead">
+          Información publicada por cada finca en su ficha de bodas.net, consultada en {venuesCheckedAt}.
+          Confirmad siempre las condiciones con la finca.
+        </p>
+      </div>
+      <div class="grid grid--3">
+        {
+          venues.map((venue) => (
+            <article class="card venue-card" data-reveal>
+              <span class="card__meta">{venue.town}</span>
+              <h3>{venue.name}</h3>
+              <p class="venue-card__guests">{venue.guests}</p>
+              <p>{venue.catering}</p>
+              <p>
+                <a href={venue.url} rel="noopener" target="_blank">
+                  Ver ficha en bodas.net
+                </a>
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="container section-header section-header--center" data-reveal>
+      <span class="eyebrow">¿Ya tenéis finca?</span>
+      <h2>Llevamos nuestro catering a vuestra finca</h2>
+      <p class="lead">
+        Coordinamos con la finca el montaje, la cocina y los tiempos, y os preparamos una propuesta a partir
+        del presupuesto que queráis destinar. Menús de boda desde 100 € por invitado.
+      </p>
+      <div class="cta-actions cta-actions--center">
+        <Button href={routes.contact} size="lg">Pedir presupuesto</Button>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection title="Preguntas frecuentes sobre fincas con catering libre" items={venueFaqs} />
+</BaseLayout>

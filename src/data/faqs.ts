@@ -82,3 +82,26 @@ export const celebrationFaqs = [
       'Sí. Preparamos opciones infantiles y platos para celíacos, alergias e intolerancias, vegetarianos y veganos.',
   },
 ] as const;
+
+export const venueFaqs = [
+  {
+    question: '¿Qué es una finca de bodas con catering libre?',
+    answer:
+      'Es una finca que alquila el espacio sin obligaros a contratar su propio catering. Podéis elegir la empresa de catering que queráis, comparar menús y precios y ajustar mejor el presupuesto de la boda.',
+  },
+  {
+    question: '¿Qué hay que preguntar a la finca antes de llevar un catering externo?',
+    answer:
+      'Conviene confirmar si hay cocina o zona de office para el catering, si cobran algún canon por catering externo, qué seguro de responsabilidad civil piden, el horario de montaje y recogida, si incluyen mobiliario y menaje, y quién se encarga de la limpieza.',
+  },
+  {
+    question: '¿Azurea Catering puede servir en estas fincas?',
+    answer:
+      'Sí, siempre que la finca admita catering externo en vuestra fecha. Nos desplazamos con nuestro equipo a fincas de Ciudad Real y de localidades a alrededor de una hora, y coordinamos el montaje directamente con la finca.',
+  },
+  {
+    question: '¿Las condiciones de las fincas pueden cambiar?',
+    answer:
+      'Sí. Esta lista recoge lo que cada finca publica en su ficha de bodas.net. Las condiciones, capacidades y precios pueden cambiar, así que confirmadlo siempre con la finca antes de reservar.',
+  },
+] as const;
