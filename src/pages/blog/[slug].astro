@@ -1,0 +1,142 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/ui/Button.astro';
+import FaqSection from '../../components/sections/FaqSection.astro';
+import { routes } from '../../data/routes';
+import { site } from '../../data/site';
+import { formatDate, getPublishedPosts, postPath, type BlogPost } from '../../utils/blog';
+import { srcsetFor } from '../../utils/responsive';
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post, posts } }));
+}
+
+interface Props {
+  post: BlogPost;
+  posts: BlogPost[];
+}
+
+const { post, posts } = Astro.props;
+const { Content } = await render(post);
+const path = postPath(post);
+const url = new URL(path, site.url).href;
+
+const serviceByCategory = {
+  Bodas: { href: routes.weddings, label: 'Catering para bodas' },
+  Comuniones: { href: routes.communions, label: 'Catering para comuniones' },
+  Empresas: { href: routes.business, label: 'Catering para empresas' },
+  Celebraciones: { href: routes.celebrations, label: 'Catering para celebraciones' },
+  Consejos: { href: routes.services, label: 'Ver nuestros servicios' },
+} as const;
+const service = serviceByCategory[post.data.category];
+
+const related = [
+  ...posts.filter((item) => item.id !== post.id && item.data.category === post.data.category),
+  ...posts.filter((item) => item.id !== post.id && item.data.category !== post.data.category),
+].slice(0, 3);
+
+const postingSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  '@id': `${url}#article`,
+  headline: post.data.title,
+  description: post.data.description,
+  image: new URL(post.data.image, site.url).href,
+  datePublished: post.data.pubDate.toISOString(),
+  dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+  inLanguage: 'es-ES',
+  articleSection: post.data.category,
+  mainEntityOfPage: { '@id': `${url}#webpage` },
+  author: { '@type': 'Organization', '@id': `${site.url}/#business`, name: site.name, url: site.url },
+  publisher: { '@id': `${site.url}/#business` },
+};
+---
+
+<BaseLayout
+  title={`${post.data.title} | ${site.name}`}
+  description={post.data.description}
+  breadcrumbs={[
+    { name: 'Blog', path: routes.blog },
+    { name: post.data.title, path },
+  ]}
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(postingSchema)} />
+
+  <article>
+    <header class="page-hero">
+      <div class="container section-header" data-reveal>
+        <nav class="post-crumbs" aria-label="Migas de pan">
+          <a href={routes.blog}>Blog</a> <span aria-hidden="true">›</span> {post.data.category}
+        </nav>
+        <h1 class="post-title">{post.data.title}</h1>
+        <p class="lead">{post.data.description}</p>
+        <p class="post-meta">
+          Publicado el <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+          {
+            post.data.updatedDate && (
+              <>
+                {' '}· Actualizado el <time datetime={post.data.updatedDate.toISOString()}>{formatDate(post.data.updatedDate)}</time>
+              </>
+            )
+          }
+          {' '}· Equipo de Azurea Catering
+        </p>
+      </div>
+    </header>
+
+    <section class="section post-body-section">
+      <div class="container post-layout">
+        <img
+          class="post-cover"
+          src={post.data.image}
+          srcset={srcsetFor(post.data.image)}
+          sizes="(min-width: 860px) 760px, 92vw"
+          alt={post.data.imageAlt}
+          width="1400"
+          height="1050"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <div class="prose">
+          <Content />
+        </div>
+        <aside class="post-cta">
+          <h2>¿Lo organizamos juntos?</h2>
+          <p>Cuéntanos la fecha, el lugar y el número de invitados, y te enviamos una propuesta a medida.</p>
+          <div class="cta-actions">
+            <Button href={routes.contact}>Pedir presupuesto</Button>
+            <Button href={service.href} variant="outline">{service.label}</Button>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </article>
+
+  {post.data.faqs && post.data.faqs.length > 0 && <FaqSection title="Preguntas frecuentes" items={post.data.faqs} />}
+
+  {
+    related.length > 0 && (
+      <section class="section">
+        <div class="container">
+          <div class="section-header section-header--center" data-reveal>
+            <span class="eyebrow">Sigue leyendo</span>
+            <h2>Más artículos del blog</h2>
+          </div>
+          <div class="grid grid--3">
+            {related.map((item) => (
+              <article class="card" data-reveal>
+                <span class="card__meta">{item.data.category}</span>
+                <h3 class="post-card__title">
+                  <a href={postPath(item)}>{item.data.title}</a>
+                </h3>
+                <p>{item.data.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+</BaseLayout>

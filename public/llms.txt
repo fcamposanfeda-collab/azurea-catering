@@ -32,6 +32,10 @@ Datos clave:
 - [Catering en Alcázar de San Juan](https://azureacatering.com/catering-alcazar-de-san-juan/): Alcázar de San Juan, Campo de Criptana y Herencia.
 - [Catering en Consuegra](https://azureacatering.com/catering-consuegra/): Consuegra, Madridejos y Urda (Toledo).
 
+## Blog
+
+- [Blog](https://azureacatering.com/blog/): guías sobre precios, menús y organización de bodas, comuniones, eventos de empresa y celebraciones en Ciudad Real.
+
 ## Empresa
 
 - [Sobre Azurea](https://azureacatering.com/sobre-azurea/)
