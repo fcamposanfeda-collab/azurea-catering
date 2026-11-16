@@ -9,6 +9,7 @@ export const routes = {
   createEvent: '/crea-tu-evento/',
   luxury: '/luxury-experiences/',
   about: '/sobre-azurea/',
+  blog: '/blog/',
   serviceArea: '/#donde-trabajamos',
   contact: '/contacto/',
 } as const;

@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/ui/Button.astro';
+import { getPageMeta } from '../../data/pages-meta';
+import { routes } from '../../data/routes';
+import { site } from '../../data/site';
+import { formatDate, getPublishedPosts, postPath } from '../../utils/blog';
+import { srcsetFor } from '../../utils/responsive';
+
+const meta = getPageMeta('/blog');
+const posts = await getPublishedPosts();
+
+const blogSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  '@id': `${site.url}/blog/#blog`,
+  name: `Blog de ${site.name}`,
+  url: `${site.url}/blog/`,
+  inLanguage: 'es-ES',
+  publisher: { '@id': `${site.url}/#business` },
+  blogPost: posts.map((post) => ({
+    '@type': 'BlogPosting',
+    headline: post.data.title,
+    url: new URL(postPath(post), site.url).href,
+    datePublished: post.data.pubDate.toISOString(),
+  })),
+};
+---
+
+<BaseLayout title={meta.title} description={meta.description}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(blogSchema)} />
+
+  <section class="page-hero">
+    <div class="container section-header" data-reveal>
+      <h1>
+        <span class="hero__kicker">Blog de Azurea Catering</span>
+        Ideas y consejos para celebrar en Ciudad Real
+      </h1>
+      <p class="lead">
+        Precios orientativos, menús, organización y pequeños trucos para que tu boda, comunión, evento de empresa o
+        fiesta salga como la imaginas.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--3 post-grid">
+        {
+          posts.map((post) => (
+            <article class="card post-card" data-reveal>
+              <a class="post-card__media" href={postPath(post)} tabindex="-1" aria-hidden="true">
+                <img
+                  src={post.data.image}
+                  srcset={srcsetFor(post.data.image)}
+                  sizes="(min-width: 1080px) 360px, (min-width: 768px) 45vw, 92vw"
+                  alt=""
+                  width="1400"
+                  height="1050"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <span class="card__meta">
+                {post.data.category} · <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+              </span>
+              <h2 class="post-card__title">
+                <a href={postPath(post)}>{post.data.title}</a>
+              </h2>
+              <p>{post.data.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="container section-header section-header--center" data-reveal>
+      <h2>¿Tienes ya fecha?</h2>
+      <p class="lead">Cuéntanos qué celebras, dónde y cuántos seréis, y te preparamos una propuesta a medida.</p>
+      <div class="cta-actions cta-actions--center">
+        <Button href={routes.contact} size="lg">Pedir presupuesto</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

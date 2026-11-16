@@ -52,6 +52,11 @@ export const pagesMeta = {
     description:
       'Azurea Catering, en Ciudad Real. Celebraciones en la ciudad, la provincia y localidades a alrededor de una hora.',
   },
+  '/blog': {
+    title: `Blog de catering y eventos en ${local.city} | ${site.name}`,
+    description:
+      'Ideas, precios orientativos y consejos para organizar bodas, comuniones, cenas de empresa y celebraciones en Ciudad Real y alrededores.',
+  },
   '/contacto': {
     title: `Contacto y presupuesto | ${site.name}`,
     description:
@@ -84,6 +89,7 @@ export const breadcrumbLabels: Record<PagePath, string> = {
   '/crea-tu-evento': 'Crea tu evento',
   '/luxury-experiences': 'Luxury Experiences',
   '/sobre-azurea': 'Sobre Azurea',
+  '/blog': 'Blog',
   '/contacto': 'Contacto',
   '/aviso-legal': 'Aviso legal',
   '/politica-de-privacidad': 'Política de privacidad',
