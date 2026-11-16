@@ -3,8 +3,8 @@ title: 'Boda en finca con catering externo: checklist para no olvidar nada'
 description: 'Todo lo que hay que confirmar con la finca y con el catering antes de una boda en finca en Ciudad Real: cocina, luz, agua, mobiliario, horarios y plan B.'
 pubDate: 2026-11-30
 category: Bodas
-image: /images/optimized/azurea-mesa-exterior.webp
-imageAlt: 'Mesa de aperitivos al aire libre preparada por Azurea para una boda en finca'
+image: /images/optimized/blog-boda-en-finca.webp
+imageAlt: 'Ilustración de una mesa de boda al aire libre en una finca, con olivo, guirnalda de luces y un molino al fondo'
 faqs:
   - question: '¿Qué necesita una finca para poder contratar catering externo?'
     answer: 'Como mínimo, acceso para la furgoneta del catering, una zona de trabajo o cocina de apoyo, toma de agua y luz suficiente. Si no los tiene, se pueden suplir con equipos portátiles, que conviene presupuestar desde el principio.'

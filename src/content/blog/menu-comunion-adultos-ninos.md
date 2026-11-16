@@ -3,8 +3,8 @@ title: 'Menú de comunión: ideas para adultos y niños que funcionan'
 description: 'Cómo plantear el menú de una comunión con adultos y niños: formatos, platos que gustan a todos, mesa dulce, alergias y cuándo reservar en Ciudad Real.'
 pubDate: 2026-11-23
 category: Comuniones
-image: /images/optimized/azurea-dulce.webp
-imageAlt: 'Torre de copas preparada para el brindis de una comunión con catering de Azurea'
+image: /images/optimized/blog-menu-comunion.webp
+imageAlt: 'Ilustración de una tarta de comunión de tres pisos con una paloma y macarons'
 faqs:
   - question: '¿Cuándo hay que reservar el catering de una comunión?'
     answer: 'En cuanto tengáis la fecha. Los fines de semana de mayo concentran la mayoría de las comuniones y se ocupan muchos meses antes.'

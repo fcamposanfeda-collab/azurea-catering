@@ -3,8 +3,8 @@ title: 'Cena de Navidad de empresa en Ciudad Real: cómo organizarla sin agobios
 description: 'Fechas, formato, menú, presupuesto y factura: guía práctica para organizar la comida o cena de Navidad de tu empresa en Ciudad Real y alrededores.'
 pubDate: 2026-11-16
 category: Empresas
-image: /images/optimized/azurea-champan-brindis.webp
-imageAlt: 'Camarero de Azurea sirviendo copas para el brindis de una cena de empresa'
+image: /images/optimized/blog-cena-navidad-empresa.webp
+imageAlt: 'Ilustración de dos copas de cava brindando bajo luces y bolas de Navidad'
 faqs:
   - question: '¿Con cuánta antelación hay que reservar la cena de Navidad de empresa?'
     answer: 'Lo ideal es cerrar la fecha entre octubre y mediados de noviembre. Los viernes y sábados de diciembre son los primeros en ocuparse; si vais tarde, un jueves o una comida a mediodía suelen tener más disponibilidad.'
