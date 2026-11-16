@@ -15,6 +15,7 @@ Datos clave:
 
 - [Servicios de catering](https://azureacatering.com/servicios/): formatos y tipos de evento.
 - [Catering para bodas](https://azureacatering.com/bodas/): cóctel de bienvenida, menú, servicio en mesa.
+- [Fincas para bodas con catering libre en Ciudad Real](https://azureacatering.com/fincas-bodas-ciudad-real/): fincas a menos de una hora que permiten catering externo, con municipio, capacidad y condiciones.
 - [Catering de comuniones](https://azureacatering.com/comuniones/): menús para adultos y niños.
 - [Catering para empresas](https://azureacatering.com/catering-empresas/): comidas y cenas de Navidad, cócteles, inauguraciones, presentaciones, jornadas y coffee breaks; propuesta por escrito y factura a empresa.
 - [Catering para cumpleaños y celebraciones](https://azureacatering.com/celebraciones/): cumpleaños, aniversarios, bautizos, jubilaciones y fiestas en casa, jardín o finca.

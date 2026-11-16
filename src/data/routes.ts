@@ -6,6 +6,7 @@ export const routes = {
   events: '/eventos/',
   business: '/catering-empresas/',
   celebrations: '/celebraciones/',
+  venues: '/fincas-bodas-ciudad-real/',
   createEvent: '/crea-tu-evento/',
   luxury: '/luxury-experiences/',
   about: '/sobre-azurea/',
