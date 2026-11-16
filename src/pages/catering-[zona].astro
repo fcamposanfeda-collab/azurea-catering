@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/ui/Button.astro';
+import SplitPhoto from '../components/ui/SplitPhoto.astro';
+import BudgetCallout from '../components/ui/BudgetCallout.astro';
+import FaqSection from '../components/sections/FaqSection.astro';
+import Reviews from '../components/sections/Reviews.astro';
+import { zones, zonePath, type Zone } from '../data/zones';
+import { routes } from '../data/routes';
+import { site } from '../data/site';
+
+export function getStaticPaths() {
+  return zones.map((zone) => ({ params: { zona: zone.slug }, props: { zone } }));
+}
+
+interface Props {
+  zone: Zone;
+}
+
+const { zone } = Astro.props;
+const path = zonePath(zone);
+const otherZones = zones.filter((item) => item.slug !== zone.slug);
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': `${new URL(path, site.url).href}#service`,
+  name: `Catering en ${zone.town}`,
+  serviceType: 'Catering para bodas, comuniones y eventos',
+  description: zone.metaDescription,
+  provider: { '@id': `${site.url}/#business` },
+  areaServed: zone.towns.map((town) => ({
+    '@type': 'City',
+    name: town,
+    containedInPlace: { '@type': 'AdministrativeArea', name: zone.province },
+  })),
+};
+---
+
+<BaseLayout
+  title={zone.metaTitle}
+  description={zone.metaDescription}
+  breadcrumbs={[{ name: `Catering en ${zone.town}`, path }]}
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <section class="page-hero">
+    <div class="container section-header" data-reveal>
+      <h1>
+        <span class="hero__kicker">{zone.kicker}</span>
+        {zone.heading}
+      </h1>
+      <p class="lead">{zone.lead}</p>
+      <BudgetCallout />
+      <div class="cta-actions">
+        <Button href={routes.contact} size="lg">Pedir presupuesto</Button>
+        <Button href={routes.weddings} variant="outline" size="lg">Ver catering de bodas</Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div data-reveal>
+        <span class="eyebrow">{zone.area}</span>
+        <h2>Cómo trabajamos en {zone.town}</h2>
+        {zone.intro.map((paragraph) => <p>{paragraph}</p>)}
+        <p class="zone-towns-label">Localidades donde servimos en la zona:</p>
+        <ul class="place-list place-list--left">
+          {zone.towns.map((town) => <li>{town}</li>)}
+        </ul>
+      </div>
+      <SplitPhoto src={zone.photo.src} alt={zone.photo.alt} />
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="container">
+      <div class="section-header section-header--center" data-reveal>
+        <span class="eyebrow">Sabor local</span>
+        <h2>Producto de la zona que podemos llevar a tu menú</h2>
+        <p class="lead">Si quieres un guiño a {zone.town} en tu celebración, te lo proponemos al preparar el presupuesto.</p>
+      </div>
+      <div class="grid grid--3">
+        {
+          zone.flavours.map((item) => (
+            <div class="card" data-reveal>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--center" data-reveal>
+        <span class="eyebrow">Qué celebramos</span>
+        <h2>Eventos que preparamos en {zone.town} y alrededores</h2>
+      </div>
+      <div class="grid grid--3">
+        {
+          zone.events.map((item) => (
+            <div class="card" data-reveal>
+              <span class="card__meta">{item.label}</span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </div>
+          ))
+        }
+      </div>
+      <div class="zone-tip" data-reveal>
+        <span class="eyebrow">Consejo para tu evento</span>
+        <h3>{zone.tip.title}</h3>
+        <p>{zone.tip.text}</p>
+      </div>
+    </div>
+  </section>
+
+  <Reviews />
+
+  <FaqSection title={`Preguntas frecuentes sobre catering en ${zone.town}`} items={zone.faqs} />
+
+  <section class="section">
+    <div class="container section-header section-header--center" data-reveal>
+      <span class="eyebrow">Otras zonas</span>
+      <h2>También trabajamos cerca de {zone.town}</h2>
+      <ul class="place-list zone-links">
+        {
+          otherZones.map((item) => (
+            <li>
+              <a href={zonePath(item)}>Catering en {item.town}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--cream">
+    <div class="container section-header section-header--center" data-reveal>
+      <h2>¿Celebras en {zone.town}?</h2>
+      <p class="lead">Cuéntanos la fecha, el lugar exacto y cuántos invitados seréis, y te enviamos una propuesta a medida.</p>
+      <div class="cta-actions cta-actions--center">
+        <Button href={routes.contact} size="lg">Pedir presupuesto</Button>
+        <Button href={routes.events} variant="outline" size="lg">Ver todos los eventos</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
