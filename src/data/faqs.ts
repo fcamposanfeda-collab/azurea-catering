@@ -13,7 +13,7 @@ export const weddingFaqs = [
   {
     question: '¿Cuánto cuesta un catering de boda en Ciudad Real?',
     answer:
-      'Cada boda se presupuesta a medida. Como referencia, nuestros menús de boda parten de 100 € por invitado, y el precio final depende del formato, el número de invitados, la bebida y el servicio que incluyáis. Trabajamos al revés que la mayoría: nos decís el presupuesto que queréis destinar y os preparamos opciones reales dentro de ese rango, desde un catering esencial hasta una boda completa con decoración y corners.',
+      'Cada boda se presupuesta a medida. Como referencia orientativa, un menú de boda completo parte de unos 100 € por invitado, pero no es un mínimo: según lo que personalicéis puede quedar por debajo o por encima. El precio final depende del formato, el número de invitados, la bebida y el servicio que incluyáis. Trabajamos al revés que la mayoría: nos decís el presupuesto que queréis destinar y os preparamos opciones reales dentro de ese rango, desde un catering esencial hasta una boda completa con decoración y corners.',
   },
   {
     question: '¿Qué incluye vuestro catering de boda?',
