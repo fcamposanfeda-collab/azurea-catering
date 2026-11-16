@@ -1565,3 +1565,11 @@ h2 + .lead {
     grid-template-columns: 1fr;
   }
 }
+
+/* El primer pantallazo se muestra al instante: animarlo retrasaba el LCP. */
+.hero [data-reveal],
+.page-hero [data-reveal] {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}

@@ -1,4 +1,6 @@
 ---
+import { halfColumnSizes, srcsetFor } from '../../utils/responsive';
+
 interface Props {
   src: string;
   alt: string;
@@ -12,6 +14,8 @@ const { src, alt, position = 'center' } = Astro.props;
   <img
     class="split__photo"
     src={src}
+    srcset={srcsetFor(src)}
+    sizes={halfColumnSizes}
     alt={alt}
     width="1400"
     height="1050"
