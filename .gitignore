@@ -16,3 +16,6 @@ referencia-interna/
 tmp-dossiers/
 *.pdf
 *.docx
+
+# El dossier descargable sí se publica.
+!public/docs/*.pdf
