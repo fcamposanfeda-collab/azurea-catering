@@ -3,8 +3,8 @@ title: '¿Cuánto cuesta un catering de boda en Ciudad Real? Qué influye en el 
 description: 'Precio por invitado, qué entra en el menú, qué se paga aparte y cómo ajustar el presupuesto del catering de tu boda en Ciudad Real y alrededores.'
 pubDate: 2026-11-16
 category: Bodas
-image: /images/optimized/azurea-celebracion.webp
-imageAlt: 'Invitados en el jardín durante una boda con catering de Azurea'
+image: /images/optimized/blog-precio-catering-boda.webp
+imageAlt: 'Ilustración de un plato de boda con cubiertos, alianzas y una etiqueta de precio en euros'
 faqs:
   - question: '¿Cuál es el precio por invitado del catering de boda de Azurea?'
     answer: 'Nuestros menús de boda parten de 100 € por invitado. El precio final depende del formato, la bebida, el servicio y el montaje que elijáis, y os lo detallamos en una propuesta a medida.'
