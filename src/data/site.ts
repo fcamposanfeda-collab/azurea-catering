@@ -8,7 +8,8 @@ export const site = {
   /** Perfiles externos de la marca, para schema `sameAs`. */
   sameAs: [
     'https://www.bodas.net/catering/azurea-catering-&-eventos--e283969',
-    'https://share.google/GUUIdw5NqoTyss88i',
+    'https://share.google/tNNGLh8bDjX349ATn',
+    'https://www.instagram.com/azurea_catering/',
   ],
   copyright: `© ${new Date().getFullYear()} Azurea Catering. Todos los derechos reservados.`,
 };
@@ -18,4 +19,6 @@ export const contact = {
   phone: '+34635197898',
   phoneDisplay: '+34 635 197 898',
   whatsapp: 'https://wa.me/34635197898',
+  instagram: 'https://www.instagram.com/azurea_catering/',
+  googleProfile: 'https://share.google/tNNGLh8bDjX349ATn',
 };
