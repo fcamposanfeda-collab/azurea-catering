@@ -7,20 +7,20 @@ image: /images/optimized/blog-precio-catering-boda.webp
 imageAlt: 'Ilustración de un plato de boda con cubiertos, alianzas y una etiqueta de precio en euros'
 faqs:
   - question: '¿Cuál es el precio por invitado del catering de boda de Azurea?'
-    answer: 'Nuestros menús de boda parten de 100 € por invitado. El precio final depende del formato, la bebida, el servicio y el montaje que elijáis, y os lo detallamos en una propuesta a medida.'
+    answer: 'No tenemos un precio cerrado: cada boda se presupuesta a medida. Como referencia, nuestros menús de boda parten de 100 € por invitado, y el precio final depende de la comida, la bebida, el servicio y el montaje que elijáis con nosotros.'
   - question: '¿Los niños pagan el mismo menú que los adultos?'
     answer: 'No necesariamente. Preparamos menú infantil, que tiene un precio distinto al de adultos. Indicad cuántos niños habrá al pedir presupuesto.'
   - question: '¿Qué IVA lleva un catering de boda?'
     answer: 'El suministro de comidas y bebidas tributa en general al tipo reducido del 10 %. Algunos servicios que se contratan por separado, como alquileres o decoración, pueden ir al 21 %. Comprobad siempre si el presupuesto incluye IVA.'
 ---
 
-Es la primera pregunta que nos hacen casi todas las parejas, y la respuesta honesta es: **depende de lo que incluyas**. Aquí te explicamos qué mueve el precio de un catering de boda en Ciudad Real para que puedas comparar presupuestos con criterio.
+Es la primera pregunta que nos hacen casi todas las parejas, y la respuesta honesta es: **no hay un precio cerrado**. Cada catering de boda es totalmente personalizado, así que el precio depende de lo que elijáis con nosotros y de la comida que queráis. Aquí te explicamos qué lo mueve para que puedas comparar presupuestos con criterio.
 
-## El punto de partida: precio por invitado
+## Un precio a medida, no una tarifa
 
-El catering de boda se presupuesta casi siempre **por invitado**. En Azurea nuestros menús de boda **parten de 100 € por invitado**, y a partir de ahí el precio sube o baja según lo que elijáis.
+El catering de boda se presupuesta **por invitado**, pero no con una tarifa fija: dos bodas con el mismo número de invitados pueden tener precios muy distintos según el menú, la bebida, el servicio y el montaje. Como referencia, en Azurea los menús de boda **parten de 100 € por invitado**, y desde ahí la propuesta se construye con vosotros.
 
-Un cálculo rápido para orientarte: con **120 invitados** y un menú de 100 €, el punto de partida es de **12.000 €**. A esa cifra se suman o restan los extras que veréis abajo.
+Por eso no damos precios cerrados sin conocer la boda: preferimos saber qué queréis y cuánto queréis invertir, y preparar opciones reales dentro de ese rango.
 
 ## Qué suele entrar en el precio del menú
 

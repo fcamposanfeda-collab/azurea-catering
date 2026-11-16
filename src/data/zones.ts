@@ -590,7 +590,7 @@ export const zones: Zone[] = [
       {
         question: '¿Cuánto cuesta el catering de una boda en la zona?',
         answer:
-          'Nuestros menús de boda parten de 100 € por invitado. El precio final depende del menú, la bebida, el servicio y el montaje que elijas, y te lo detallamos en una propuesta a medida.',
+          'Cada boda se presupuesta a medida, así que el precio depende de la comida, la bebida, el servicio y el montaje que elijas con nosotros. Como referencia, nuestros menús de boda parten de 100 € por invitado, y te lo detallamos todo en una propuesta personalizada.',
       },
     ],
   },
