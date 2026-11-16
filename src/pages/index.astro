@@ -12,6 +12,7 @@ import SplitPhoto from '../components/ui/SplitPhoto.astro';
 import { formats, process, serviceCards, values } from '../data/content';
 
 const meta = getPageMeta('/');
+import { halfColumnSizes, srcsetFor } from '../utils/responsive';
 ---
 
 <BaseLayout title={meta.title} description={meta.description}>
@@ -20,6 +21,8 @@ const meta = getPageMeta('/');
     rel="preload"
     as="image"
     href="/images/optimized/azurea-salon.webp"
+    imagesrcset={srcsetFor('/images/optimized/azurea-salon.webp')}
+    imagesizes={halfColumnSizes}
     type="image/webp"
     fetchpriority="high"
   />
@@ -28,7 +31,7 @@ const meta = getPageMeta('/');
       <div class="hero__content" data-reveal>
         <div class="hero__brand-badge" aria-label="Azurea Catering">
           <img
-            src="/images/optimized/logo-azurea.webp"
+            src="/images/optimized/logo-azurea-120.webp"
             alt="Logotipo de Azurea Catering"
             width="50"
             height="34"
@@ -54,6 +57,8 @@ const meta = getPageMeta('/');
         <img
           class="hero__photo"
           src="/images/optimized/azurea-salon.webp"
+          srcset={srcsetFor('/images/optimized/azurea-salon.webp')}
+          sizes={halfColumnSizes}
           alt="Mesa servida bajo una carpa en una celebración de Azurea Catering"
           width="1400"
           height="1050"
