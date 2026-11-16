@@ -13,7 +13,7 @@ export const weddingFaqs = [
   {
     question: '¿Cuánto cuesta un catering de boda en Ciudad Real?',
     answer:
-      'Nuestros menús de boda parten de 100 € por invitado, y el precio final depende del formato, el número de invitados, la bebida y el servicio que incluyáis. Trabajamos al revés que la mayoría: nos decís el presupuesto que queréis destinar y os preparamos opciones reales dentro de ese rango, desde un catering esencial hasta una boda completa con decoración y corners.',
+      'Cada boda se presupuesta a medida. Como referencia, nuestros menús de boda parten de 100 € por invitado, y el precio final depende del formato, el número de invitados, la bebida y el servicio que incluyáis. Trabajamos al revés que la mayoría: nos decís el presupuesto que queréis destinar y os preparamos opciones reales dentro de ese rango, desde un catering esencial hasta una boda completa con decoración y corners.',
   },
   {
     question: '¿Qué incluye vuestro catering de boda?',
@@ -69,7 +69,7 @@ export const celebrationFaqs = [
   {
     question: '¿Cuánto cuesta un catering para una celebración privada?',
     answer:
-      'Depende del número de invitados, del formato (cóctel, barra de aperitivos, menú en mesa o mesa dulce) y del servicio que incluyáis. Nos decís cuánto queréis invertir y os preparamos opciones reales dentro de ese presupuesto.',
+      'Es totalmente personalizado: depende del número de invitados, de la comida que elijáis, del formato (cóctel, barra de aperitivos, menú en mesa o mesa dulce) y del servicio que incluyáis. Como referencia, los eventos personalizados parten de 25 € por persona. Nos decís cuánto queréis invertir y os preparamos opciones reales dentro de ese presupuesto.',
   },
   {
     question: '¿Podéis encargaros también de camareros, menaje y montaje?',
