@@ -1,0 +1,87 @@
+---
+import PrivacyNotice from '../forms/PrivacyNotice.astro';
+
+interface Props {
+  defaultEvent?: string;
+}
+
+const { defaultEvent = 'Cumpleaños o celebración' } = Astro.props;
+const events = ['Cumpleaños o celebración', 'Comunión', 'Bautizo', 'Aniversario', 'Evento de empresa', 'Otro'];
+const dossierUrl = '/docs/azurea-dossier-eventos-privados.pdf';
+---
+
+<section class="section section--cream" id="dossier" aria-labelledby="dossier-title">
+  <div class="container split dossier">
+    <div data-reveal>
+      <span class="eyebrow">Dossier gratuito</span>
+      <h2 id="dossier-title">Descarga nuestro dossier de eventos privados</h2>
+      <p class="lead">
+        Entrantes, primeros, segundos, menú infantil y corners (jamón con cortador, quesos D.O. La Mancha,
+        vermut y gildas, brasas y candy bar), con la cocina manchega reinterpretada que nos define.
+      </p>
+      <ul class="feature-list">
+        <li>17 páginas con nuestras propuestas y fotos de eventos reales.</li>
+        <li>Ideas para montar tu menú a medida.</li>
+        <li>Sin compromiso: si te encaja, te preparamos presupuesto.</li>
+      </ul>
+    </div>
+
+    <div class="dossier__box" data-reveal>
+      <form class="contact-form" data-contact-form data-form-type="dossier" novalidate>
+        <input type="checkbox" name="botcheck" class="contact-form__honeypot" tabindex="-1" autocomplete="off" />
+        <div class="form-grid">
+          <label>
+            Nombre
+            <input type="text" name="nombre" autocomplete="name" required />
+          </label>
+          <label>
+            Teléfono
+            <input type="tel" name="telefono" autocomplete="tel" />
+          </label>
+        </div>
+        <label>
+          Email
+          <input type="email" name="email" autocomplete="email" required />
+        </label>
+        <div class="form-grid">
+          <label>
+            Tipo de evento
+            <select name="evento">
+              {events.map((event) => <option value={event} selected={event === defaultEvent}>{event}</option>)}
+            </select>
+          </label>
+          <label>
+            Fecha aproximada
+            <input type="text" name="fecha" placeholder="Ej.: mayo 2027" />
+          </label>
+        </div>
+        <label>
+          Invitados aproximados
+          <input type="text" name="invitados" inputmode="numeric" placeholder="Ej.: 60" />
+        </label>
+
+        <PrivacyNotice purpose="enviarte el dossier y contactarte para preparar tu propuesta" />
+
+        <p class="contact-form__status" data-form-status hidden></p>
+        <button type="submit" class="btn btn--primary btn--lg">Quiero el dossier</button>
+      </form>
+
+      <p class="dossier__download" data-dossier-download hidden>
+        <a
+          class="btn btn--primary btn--lg"
+          href={dossierUrl}
+          download
+          target="_blank"
+          rel="noopener"
+          data-umami-event="Dossier descargado"
+        >
+          Descargar dossier (PDF, 3 MB)
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '../../scripts/contact-form.ts';
+</script>

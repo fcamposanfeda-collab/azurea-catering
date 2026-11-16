@@ -5,6 +5,7 @@ import SplitPhoto from '../components/ui/SplitPhoto.astro';
 import BudgetCallout from '../components/ui/BudgetCallout.astro';
 import FaqSection from '../components/sections/FaqSection.astro';
 import Reviews from '../components/sections/Reviews.astro';
+import DossierDownload from '../components/sections/DossierDownload.astro';
 import { celebrationFaqs } from '../data/faqs';
 import { getPageMeta } from '../data/pages-meta';
 import { routes } from '../data/routes';
@@ -26,6 +27,7 @@ const meta = getPageMeta('/celebraciones');
       <BudgetCallout />
       <div class="cta-actions">
         <Button href={routes.contact} size="lg">Pedir presupuesto</Button>
+        <Button href="#dossier" variant="outline" size="lg">Descargar dossier</Button>
       </div>
     </div>
   </section>
@@ -109,6 +111,8 @@ const meta = getPageMeta('/celebraciones');
       </div>
     </div>
   </section>
+
+  <DossierDownload />
 
   <Reviews />
 

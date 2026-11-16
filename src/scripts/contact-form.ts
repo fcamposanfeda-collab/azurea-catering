@@ -46,6 +46,18 @@ function buildMessage(data: FormData, formType: string) {
     ].join('\n');
   }
 
+  if (formType === 'dossier') {
+    return [
+      'Descarga del dossier de eventos privados',
+      '',
+      `Tipo de evento: ${data.get('evento') ?? ''}`,
+      `Fecha aproximada: ${data.get('fecha') || 'No indicada'}`,
+      `Invitados aproximados: ${data.get('invitados') || 'No indicado'}`,
+      '',
+      `Política de privacidad: ${data.get('privacidad') ?? 'No aceptada'}`,
+    ].join('\n');
+  }
+
   return [
     `Tipo de evento: ${data.get('evento') ?? ''}`,
     '',
@@ -56,12 +68,15 @@ function buildMessage(data: FormData, formType: string) {
   ].join('\n');
 }
 
+function subjectFor(formType: string) {
+  if (formType === 'luxury') return 'Luxury Experiences — solicitud de viaje a medida';
+  if (formType === 'dossier') return 'Nuevo contacto: descarga del dossier de eventos privados';
+  return 'Solicitud de presupuesto Azurea Catering';
+}
+
 async function submitWithWeb3Forms(accessKey: string, data: FormData, formType: string) {
   const payload = new FormData();
-  const subject =
-    formType === 'luxury'
-      ? 'Luxury Experiences — solicitud de viaje a medida'
-      : 'Solicitud de presupuesto Azurea Catering';
+  const subject = subjectFor(formType);
 
   payload.append('access_key', accessKey);
   payload.append('subject', subject);
@@ -80,10 +95,7 @@ async function submitWithWeb3Forms(accessKey: string, data: FormData, formType: 
 }
 
 async function submitWithFormSubmit(data: FormData, formType: string) {
-  const subject =
-    formType === 'luxury'
-      ? 'Luxury Experiences — solicitud de viaje a medida'
-      : 'Solicitud de presupuesto Azurea Catering';
+  const subject = subjectFor(formType);
 
   const response = await fetch(`https://formsubmit.co/ajax/${contact.email}`, {
     method: 'POST',
@@ -137,6 +149,19 @@ function initContactForms(accessKey: string) {
           await submitWithWeb3Forms(accessKey, data, formType);
         } else {
           await submitWithFormSubmit(data, formType);
+        }
+
+        if (formType === 'dossier') {
+          window.umami?.track('Dossier solicitado', { evento: String(data.get('evento') ?? '') });
+          form.reset();
+          const download = form.parentElement?.querySelector<HTMLElement>('[data-dossier-download]');
+          if (download) {
+            submitButton?.setAttribute('hidden', '');
+            download.hidden = false;
+            download.querySelector<HTMLAnchorElement>('a')?.focus();
+          }
+          showStatus(form, 'success', '¡Gracias! Ya puedes descargar el dossier. Te escribiremos en breve.');
+          return;
         }
 
         window.umami?.track('Formulario enviado', {
