@@ -1,5 +1,6 @@
 ---
 import { serviceAreaFaqs, servicePlaces } from '../../data/local';
+import { zones, zonePath } from '../../data/zones';
 
 interface Props {
   faq?: boolean;
@@ -35,6 +36,18 @@ const faqSchema = {
     <ul class="place-list" data-reveal>
       {servicePlaces.map((place) => <li>{place.name}</li>)}
     </ul>
+    <div class="zone-nav" data-reveal>
+      <h3>Catering por zonas</h3>
+      <ul class="place-list zone-links">
+        {
+          zones.map((zone) => (
+            <li>
+              <a href={zonePath(zone)}>Catering en {zone.town}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
     <p class="place-note" data-reveal>
       También otros pueblos y fincas dentro de ese radio. Si queda un poco más lejos, pregúntanos.
     </p>

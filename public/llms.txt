@@ -21,6 +21,17 @@ Datos clave:
 - [Eventos](https://azureacatering.com/eventos/): resumen de eventos de empresa y privados.
 - [Crea tu evento](https://azureacatering.com/crea-tu-evento/): eventos temáticos y personalizados.
 
+## Zonas
+
+- [Catering en Almagro](https://azureacatering.com/catering-almagro/): Almagro, Bolaños, Miguelturra y Campo de Calatrava.
+- [Catering en Puertollano](https://azureacatering.com/catering-puertollano/): Puertollano, Almodóvar del Campo y Valle de Alcudia.
+- [Catering en Daimiel](https://azureacatering.com/catering-daimiel/): Daimiel, Malagón y Villarrubia de los Ojos.
+- [Catering en Valdepeñas](https://azureacatering.com/catering-valdepenas/): Valdepeñas, Santa Cruz de Mudela y Moral de Calatrava.
+- [Catering en Manzanares](https://azureacatering.com/catering-manzanares/): Manzanares, Membrilla y La Solana.
+- [Catering en Tomelloso](https://azureacatering.com/catering-tomelloso/): Tomelloso, Argamasilla de Alba y Socuéllamos.
+- [Catering en Alcázar de San Juan](https://azureacatering.com/catering-alcazar-de-san-juan/): Alcázar de San Juan, Campo de Criptana y Herencia.
+- [Catering en Consuegra](https://azureacatering.com/catering-consuegra/): Consuegra, Madridejos y Urda (Toledo).
+
 ## Empresa
 
 - [Sobre Azurea](https://azureacatering.com/sobre-azurea/)

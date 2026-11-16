@@ -10,20 +10,27 @@ interface Props {
   pathname: string;
   title: string;
   description: string;
+  breadcrumbs?: { name: string; path: string }[];
 }
 
-const { pathname, title, description } = Astro.props;
+const { pathname, title, description, breadcrumbs } = Astro.props;
 const normalizedPath = pathname.length > 1 ? pathname.replace(/\/$/, '') : pathname;
 const pagePath = (normalizedPath in breadcrumbLabels ? normalizedPath : '/') as PagePath;
-const pageUrl = new URL(pagePath === '/' ? '/' : `${pagePath}/`, site.url).href;
+const pageUrl = breadcrumbs
+  ? new URL(normalizedPath === '/' ? '/' : `${normalizedPath}/`, site.url).href
+  : new URL(pagePath === '/' ? '/' : `${pagePath}/`, site.url).href;
 const businessId = `${site.url}/#business`;
 const websiteId = `${site.url}/#website`;
 const webpageId = `${pageUrl}#webpage`;
 const breadcrumbId = `${pageUrl}#breadcrumb`;
 const ogImage = new URL(site.ogImage, site.url).href;
 
-const breadcrumbItems =
-  pagePath === '/'
+const breadcrumbItems = breadcrumbs
+  ? [
+      { name: breadcrumbLabels['/'], item: site.url },
+      ...breadcrumbs.map((crumb) => ({ name: crumb.name, item: new URL(crumb.path, site.url).href })),
+    ]
+  : pagePath === '/'
     ? [{ name: breadcrumbLabels['/'], item: site.url }]
     : [
         { name: breadcrumbLabels['/'], item: site.url },

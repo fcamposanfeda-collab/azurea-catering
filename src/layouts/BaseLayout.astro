@@ -19,9 +19,11 @@ interface Props {
   title: string;
   description: string;
   noindex?: boolean;
+  /** Migas de pan para el schema cuando la página no está en pagesMeta (zonas, blog). */
+  breadcrumbs?: { name: string; path: string }[];
 }
 
-const { title, description, noindex = false } = Astro.props;
+const { title, description, noindex = false, breadcrumbs } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, site.url);
 const ogImageURL = new URL(site.ogImage, site.url);
 ---
@@ -66,7 +68,7 @@ const ogImageURL = new URL(site.ogImage, site.url);
       src="https://cloud.umami.is/script.js"
       data-website-id="db88ca69-f827-489f-91ea-3193111bfdcb"
       data-domains="azureacatering.com"></script>
-    {!noindex && <SeoSchema pathname={Astro.url.pathname} title={title} description={description} />}
+    {!noindex && <SeoSchema pathname={Astro.url.pathname} title={title} description={description} breadcrumbs={breadcrumbs} />}
     <slot name="head" />
   </head>
   <body>
