@@ -15,7 +15,7 @@ export const pagesMeta = {
   '/bodas': {
     title: `Catering para bodas en ${local.city} y fincas | ${site.name}`,
     description:
-      'Catering de boda en Ciudad Real y fincas a una hora. Menús desde 100 € por invitado, de 30 a 500 invitados, cóctel, banquete y opciones para celíacos.',
+      'Catering de boda en Ciudad Real y fincas a una hora. Presupuesto personalizado (referencia desde 100 € por invitado), de 30 a 500 invitados y opciones para celíacos.',
   },
   '/comuniones': {
     title: `Catering de comuniones en ${local.city} | ${site.name}`,

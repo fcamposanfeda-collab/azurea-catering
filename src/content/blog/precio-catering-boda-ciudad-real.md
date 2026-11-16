@@ -7,7 +7,7 @@ image: /images/optimized/blog-precio-catering-boda.webp
 imageAlt: 'Ilustración de un plato de boda con cubiertos, alianzas y una etiqueta de precio en euros'
 faqs:
   - question: '¿Cuál es el precio por invitado del catering de boda de Azurea?'
-    answer: 'No tenemos un precio cerrado: cada boda se presupuesta a medida. Como referencia, nuestros menús de boda parten de 100 € por invitado, y el precio final depende de la comida, la bebida, el servicio y el montaje que elijáis con nosotros.'
+    answer: 'No tenemos un precio cerrado: cada boda se presupuesta a medida. Como referencia orientativa, un menú de boda completo parte de unos 100 € por invitado, pero al ser personalizado puede quedar por debajo o por encima según la comida, la bebida, el servicio y el montaje que elijáis con nosotros.'
   - question: '¿Los niños pagan el mismo menú que los adultos?'
     answer: 'No necesariamente. Preparamos menú infantil, que tiene un precio distinto al de adultos. Indicad cuántos niños habrá al pedir presupuesto.'
   - question: '¿Qué IVA lleva un catering de boda?'
@@ -18,7 +18,7 @@ Es la primera pregunta que nos hacen casi todas las parejas, y la respuesta hone
 
 ## Un precio a medida, no una tarifa
 
-El catering de boda se presupuesta **por invitado**, pero no con una tarifa fija: dos bodas con el mismo número de invitados pueden tener precios muy distintos según el menú, la bebida, el servicio y el montaje. Como referencia, en Azurea los menús de boda **parten de 100 € por invitado**, y desde ahí la propuesta se construye con vosotros.
+El catering de boda se presupuesta **por invitado**, pero no con una tarifa fija: dos bodas con el mismo número de invitados pueden tener precios muy distintos según el menú, la bebida, el servicio y el montaje. Como referencia orientativa, en Azurea un menú de boda completo parte de **unos 100 € por invitado**. No es un mínimo: si personalizáis la propuesta (un cóctel en lugar de banquete, menos servicios o un formato más sencillo), el precio puede quedar por debajo.
 
 Por eso no damos precios cerrados sin conocer la boda: preferimos saber qué queréis y cuánto queréis invertir, y preparar opciones reales dentro de ese rango.
 
