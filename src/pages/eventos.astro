@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/ui/Button.astro';
 import SplitPhoto from '../components/ui/SplitPhoto.astro';
 import BudgetCallout from '../components/ui/BudgetCallout.astro';
+import DossierDownload from '../components/sections/DossierDownload.astro';
 import { getPageMeta } from '../data/pages-meta';
 import { routes } from '../data/routes';
 
@@ -58,5 +59,6 @@ const meta = getPageMeta('/eventos');
       </div>
     </div>
   </section>
+  <DossierDownload />
 </BaseLayout>
 

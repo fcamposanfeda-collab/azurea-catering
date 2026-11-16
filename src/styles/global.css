@@ -1573,3 +1573,16 @@ h2 + .lead {
   transform: none;
   transition: none;
 }
+
+.dossier__box {
+  padding: 1.75rem;
+  background: var(--color-cream-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.dossier__download {
+  margin-top: 1.25rem;
+  text-align: center;
+}
